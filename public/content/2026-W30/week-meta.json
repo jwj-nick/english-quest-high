@@ -1,0 +1,27 @@
+{
+  "week": "2026-W30",
+  "start_date": "2026-07-20",
+  "end_date": "2026-07-26",
+  "theme": "Learning and Memory",
+  "theme_description_ko": "학습과 기억을 주제로 한 첫 주차. 학습 메타인지, 기억의 작동 원리, 효과적인 공부 방법을 다룬다.",
+  "targets": {
+    "vocabulary": { "goal_completions": 3, "available_items": 15 },
+    "listening": { "goal_completions": 2, "available_items": 5 },
+    "reading": { "goal_completions": 2, "available_items": 2 },
+    "speaking_shadowing": { "goal_completions": 3, "available_items": 10 },
+    "speaking_qa": { "goal_completions": 3, "available_items": 10 },
+    "speaking_roleplay": { "goal_completions": 1, "available_items": 2 },
+    "writing": { "goal_completions": 2, "available_items": 5 }
+  },
+  "xp_weights": {
+    "vocabulary": 10,
+    "listening": 15,
+    "reading": 20,
+    "speaking_shadowing": 12,
+    "speaking_qa": 18,
+    "speaking_roleplay": 30,
+    "writing": 25
+  },
+  "buffs_from_last_week": [],
+  "notes_from_retrospective": "프로젝트 첫 주차. 모든 영역 균등하게 시작. 다음 주부터 학습 로그 기반으로 가중치 조정."
+}

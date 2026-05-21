@@ -1,0 +1,105 @@
+{
+  "week": "2026-W30",
+  "items": [
+    {
+      "id": "qa_w30_001",
+      "question_en": "What is your favorite way to memorize new English words?",
+      "question_ko": "새로운 영어 단어를 외우는 너의 가장 좋아하는 방법은?",
+      "audio_question": "audio/qa_w30_001.mp3",
+      "expected_keywords": ["flashcard", "repetition", "context", "writing", "app", "example"],
+      "sample_answer_en": "I prefer using flashcards because they let me review words repeatedly until I really remember them.",
+      "difficulty": 2,
+      "tags": ["study", "personal"]
+    },
+    {
+      "id": "qa_w30_002",
+      "question_en": "Do you study better in the morning or at night? Why?",
+      "question_ko": "아침에 공부가 더 잘되는지, 밤에 더 잘되는지? 왜?",
+      "audio_question": "audio/qa_w30_002.mp3",
+      "expected_keywords": ["morning", "night", "focus", "quiet", "fresh", "tired"],
+      "sample_answer_en": "I study better in the morning because my mind is fresh and there are fewer distractions.",
+      "difficulty": 2,
+      "tags": ["personal", "habits"]
+    },
+    {
+      "id": "qa_w30_003",
+      "question_en": "Have you ever experienced forgetting something important right before a test?",
+      "question_ko": "시험 직전 중요한 것을 잊어버린 경험이 있어?",
+      "audio_question": "audio/qa_w30_003.mp3",
+      "expected_keywords": ["forgot", "blank", "nervous", "review", "panic", "remember"],
+      "sample_answer_en": "Yes, once during a math test I completely forgot a formula I had memorized just an hour before. It made me realize how important spaced practice is.",
+      "difficulty": 3,
+      "tags": ["personal", "experience"]
+    },
+    {
+      "id": "qa_w30_004",
+      "question_en": "If you could improve one cognitive skill, which would you choose and why?",
+      "question_ko": "한 가지 인지 능력을 향상시킬 수 있다면, 어떤 것을 선택하고 왜?",
+      "audio_question": "audio/qa_w30_004.mp3",
+      "expected_keywords": ["memory", "focus", "concentration", "creativity", "logic", "speed"],
+      "sample_answer_en": "I would choose deep focus. In today's world full of distractions, the ability to concentrate for long periods feels like a superpower.",
+      "difficulty": 4,
+      "tags": ["abstract", "수능회화"]
+    },
+    {
+      "id": "qa_w30_005",
+      "question_en": "What is the most useful thing you have learned this year?",
+      "question_ko": "올해 배운 것 중 가장 유용한 것은?",
+      "audio_question": "audio/qa_w30_005.mp3",
+      "expected_keywords": ["learned", "useful", "skill", "subject", "lesson"],
+      "sample_answer_en": "The most useful thing I learned this year is how to break large tasks into smaller ones. It changed how I approach studying.",
+      "difficulty": 3,
+      "tags": ["personal", "reflection"]
+    },
+    {
+      "id": "qa_w30_006",
+      "question_en": "Do you think smartphones help or hurt our memory? Why?",
+      "question_ko": "스마트폰은 우리 기억력에 도움이 된다고 생각해, 해친다고 생각해? 왜?",
+      "audio_question": "audio/qa_w30_006.mp3",
+      "expected_keywords": ["depend", "distraction", "convenient", "rely", "outsource", "weaken"],
+      "sample_answer_en": "I think they hurt our memory because we rely on them to store everything, so our brains don't get the practice they need.",
+      "difficulty": 4,
+      "tags": ["abstract", "수능회화", "opinion"]
+    },
+    {
+      "id": "qa_w30_007",
+      "question_en": "Can you describe a teacher who had a profound impact on you?",
+      "question_ko": "너에게 깊은 영향을 준 선생님을 묘사할 수 있어?",
+      "audio_question": "audio/qa_w30_007.mp3",
+      "expected_keywords": ["teacher", "influenced", "inspired", "patient", "remember", "subject"],
+      "sample_answer_en": "My middle school science teacher had a profound impact on me. She made every lesson feel like an adventure.",
+      "difficulty": 4,
+      "tags": ["personal", "수능회화"]
+    },
+    {
+      "id": "qa_w30_008",
+      "question_en": "What do you do when you feel stuck while studying?",
+      "question_ko": "공부하다 막혔을 때 너는 무엇을 해?",
+      "audio_question": "audio/qa_w30_008.mp3",
+      "expected_keywords": ["break", "walk", "switch", "ask", "different", "rest"],
+      "sample_answer_en": "When I feel stuck, I take a short walk. Often the answer comes to me when I stop forcing it.",
+      "difficulty": 3,
+      "tags": ["personal", "habits"]
+    },
+    {
+      "id": "qa_w30_009",
+      "question_en": "Is it better to learn many things at a basic level, or to master one thing deeply?",
+      "question_ko": "여러 가지를 기초 수준으로 배우는 것이 나아, 아니면 한 가지를 깊이 마스터하는 것이 나아?",
+      "audio_question": "audio/qa_w30_009.mp3",
+      "expected_keywords": ["depend", "balance", "depth", "breadth", "specialist", "generalist"],
+      "sample_answer_en": "I think it depends on the goal. For a hobby, breadth is fun. But for a career, deep mastery usually wins.",
+      "difficulty": 5,
+      "tags": ["abstract", "수능고난도", "opinion"]
+    },
+    {
+      "id": "qa_w30_010",
+      "question_en": "If you could design the perfect study environment, what would it look like?",
+      "question_ko": "완벽한 학습 환경을 설계할 수 있다면, 어떤 모습일까?",
+      "audio_question": "audio/qa_w30_010.mp3",
+      "expected_keywords": ["quiet", "light", "desk", "plants", "music", "phone", "comfortable"],
+      "sample_answer_en": "My perfect study space would be quiet, with natural light, a clean desk, and absolutely no phone within reach.",
+      "difficulty": 4,
+      "tags": ["abstract", "creative"]
+    }
+  ]
+}

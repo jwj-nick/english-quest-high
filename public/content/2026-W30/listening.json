@@ -1,0 +1,162 @@
+{
+  "week": "2026-W30",
+  "items": [
+    {
+      "id": "listen_w30_001",
+      "type": "dialogue",
+      "title": "Two students discussing exam strategies",
+      "duration_seconds": 42,
+      "transcript_en": "M: Hey, how are you preparing for the history exam next week? W: I'm trying something different this time. Instead of just re-reading my notes, I close the book and try to recall everything from memory. M: That sounds tough. Does it actually work? W: Yes, surprisingly well. It's called active recall, and studies show it's far more effective than passive review. M: Hmm, I might give it a try. My usual method of highlighting clearly isn't working anymore.",
+      "transcript_ko": "남: 다음 주 역사 시험 어떻게 준비하고 있어? 여: 이번엔 다른 걸 시도해 보고 있어. 그냥 필기를 다시 읽는 대신, 책을 덮고 기억으로 모든 걸 떠올려 보려고 해. 남: 힘들 것 같은데, 정말 효과 있어? 여: 응, 놀랍게도 잘 돼. '능동적 인출'이라고 하는데, 연구에 따르면 수동적 복습보다 훨씬 효과적이래. 남: 음, 한번 해봐야겠다. 평소처럼 형광펜 긋는 건 더 이상 효과가 없어.",
+      "audio": "audio/listen_w30_001.mp3",
+      "audio_slow": "audio/listen_w30_001_slow.mp3",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple_choice",
+          "question_ko": "여학생이 사용하는 학습 방법은?",
+          "options": [
+            "여러 번 책을 다시 읽기",
+            "필기에 형광펜으로 표시하기",
+            "책을 덮고 기억에서 떠올려보기",
+            "친구와 함께 토론하기"
+          ],
+          "correct_index": 2,
+          "explanation_ko": "여학생은 'close the book and try to recall everything from memory' 라고 했다. 이것이 active recall(능동적 인출)이다."
+        },
+        {
+          "id": "q2",
+          "type": "fill_blank",
+          "prompt_en": "The method the female student uses is called ___.",
+          "answer": "active recall",
+          "alternatives": ["active-recall", "Active Recall"]
+        }
+      ],
+      "difficulty": 4,
+      "tags": ["dialogue", "study"]
+    },
+    {
+      "id": "listen_w30_002",
+      "type": "monologue",
+      "title": "Short lecture: The Forgetting Curve",
+      "duration_seconds": 55,
+      "transcript_en": "Today I want to introduce a concept called the forgetting curve, first proposed by Hermann Ebbinghaus in the late 1800s. The idea is simple but powerful: when you learn something new, your memory of it decays exponentially over time. Within just one day, you may forget over half of what you've learned. However, here's the good news. Each time you review the material, the curve becomes less steep, meaning you forget more slowly. This is why spaced repetition is so effective. The lesson is clear: reviewing today, tomorrow, and next week is far better than studying for hours just once.",
+      "transcript_ko": "오늘은 1800년대 후반 헤르만 에빙하우스가 처음 제안한 '망각 곡선'이라는 개념을 소개하고 싶다. 아이디어는 단순하지만 강력하다. 새로운 것을 배웠을 때, 그것에 대한 기억은 시간이 지남에 따라 기하급수적으로 감퇴한다. 단 하루 만에 배운 것의 절반 이상을 잊어버릴 수 있다. 하지만 좋은 소식이 있다. 자료를 복습할 때마다 곡선의 기울기가 완만해진다. 즉, 더 천천히 잊게 된다는 뜻이다. 이것이 분산 반복이 그토록 효과적인 이유다. 교훈은 분명하다. 한 번에 몇 시간 공부하는 것보다 오늘, 내일, 다음 주에 복습하는 것이 훨씬 낫다.",
+      "audio": "audio/listen_w30_002.mp3",
+      "audio_slow": "audio/listen_w30_002_slow.mp3",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple_choice",
+          "question_ko": "강연자가 전달하려는 핵심 메시지는?",
+          "options": [
+            "한번에 오랫동안 공부하는 것이 가장 효과적이다",
+            "복습을 분산해서 하는 것이 한번에 길게 공부하는 것보다 낫다",
+            "망각은 피할 수 없으므로 노력해도 소용없다",
+            "에빙하우스의 이론은 오래되어 더 이상 유효하지 않다"
+          ],
+          "correct_index": 1,
+          "explanation_ko": "마지막 문장에서 'reviewing today, tomorrow, and next week is far better than studying for hours just once' 라고 했다."
+        },
+        {
+          "id": "q2",
+          "type": "true_false",
+          "question_ko": "복습을 할 때마다 망각 곡선이 더 가파르게 된다.",
+          "options": ["참", "거짓"],
+          "correct_index": 1,
+          "explanation_ko": "강연자는 'the curve becomes less steep' 즉 완만해진다고 했다."
+        }
+      ],
+      "difficulty": 4,
+      "tags": ["monologue", "psychology"]
+    },
+    {
+      "id": "listen_w30_003",
+      "type": "dialogue",
+      "title": "Asking a teacher for essay feedback",
+      "duration_seconds": 38,
+      "transcript_en": "S: Excuse me, Ms. Lee, could you take a look at my essay draft? T: Of course. What aspects would you like me to focus on? S: Honestly, I'm not sure if my main argument is clear enough. I feel like I'm wandering. T: That's a common issue. Let me read through it. ... Okay, your ideas are interesting, but you should articulate your thesis in the first paragraph more directly. Right now it doesn't appear until the third page.",
+      "transcript_ko": "학: 선생님, 제 에세이 초안을 봐 주실 수 있을까요? 교: 물론이지. 어떤 부분을 중점적으로 봐줄까? 학: 솔직히 제 주장이 명확한지 잘 모르겠어요. 글이 산만한 것 같아요. 교: 흔한 문제야. 한번 읽어볼게. ... 좋아, 아이디어는 흥미로운데, 첫 문단에서 주제문을 더 직접적으로 표현해야 해. 지금은 세 번째 페이지가 되어서야 나와.",
+      "audio": "audio/listen_w30_003.mp3",
+      "audio_slow": "audio/listen_w30_003_slow.mp3",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple_choice",
+          "question_ko": "교사의 주된 조언은?",
+          "options": [
+            "에세이를 더 길게 써라",
+            "주제문을 더 일찍, 명확하게 제시하라",
+            "더 흥미로운 주제를 선택하라",
+            "문법 오류를 수정하라"
+          ],
+          "correct_index": 1,
+          "explanation_ko": "교사는 'articulate your thesis in the first paragraph more directly' 라고 했다."
+        }
+      ],
+      "difficulty": 4,
+      "tags": ["dialogue", "academic"]
+    },
+    {
+      "id": "listen_w30_004",
+      "type": "dialogue",
+      "title": "Friends discussing a book on memory",
+      "duration_seconds": 35,
+      "transcript_en": "W: Have you read 'Moonwalking with Einstein'? It's about memory champions. M: No, but I've heard of it. Is it any good? W: It's fascinating. The author trained for a year using ancient memory techniques and ended up winning the US Memory Championship. M: Wait, anyone can be trained to have a superhuman memory? W: Apparently yes. The book argues that memory isn't really about talent. It's about technique and practice.",
+      "transcript_ko": "여: '아인슈타인과 함께 걷기' 읽어 봤어? 기억력 챔피언들에 관한 책이야. 남: 아니, 들어봤는데. 좋아? 여: 정말 흥미로워. 저자가 일 년 동안 고대 기억술을 훈련해서 결국 미국 기억력 챔피언십에서 우승했어. 남: 잠깐, 누구나 훈련받으면 초인적인 기억력을 가질 수 있다고? 여: 그런 것 같아. 그 책은 기억력이 사실 재능이 아니라 기술과 연습의 문제라고 주장해.",
+      "audio": "audio/listen_w30_004.mp3",
+      "audio_slow": "audio/listen_w30_004_slow.mp3",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple_choice",
+          "question_ko": "책의 핵심 주장은?",
+          "options": [
+            "기억력은 타고난 재능이다",
+            "기억력은 기술과 연습으로 길러진다",
+            "고대 기억술은 더 이상 효과가 없다",
+            "기억력 챔피언십은 운에 좌우된다"
+          ],
+          "correct_index": 1,
+          "explanation_ko": "여학생은 'memory isn't really about talent. It's about technique and practice' 라고 했다."
+        }
+      ],
+      "difficulty": 3,
+      "tags": ["dialogue", "book"]
+    },
+    {
+      "id": "listen_w30_005",
+      "type": "monologue",
+      "title": "TED-style short talk: Why deep focus matters",
+      "duration_seconds": 58,
+      "transcript_en": "We live in an age of constant distraction. Every notification, every quick check of social media, fragments our attention. But here's what neuroscience tells us: deep work, the ability to concentrate without distraction on a cognitively demanding task, is becoming both more rare and more valuable. The brain consolidates information most effectively when we're fully engaged. Multitasking, despite what we tell ourselves, doesn't make us more productive. It just makes us worse at everything we do. The solution isn't more willpower. It's designing your environment so that deep focus becomes the default, not the exception.",
+      "transcript_ko": "우리는 끊임없는 산만함의 시대에 살고 있다. 모든 알림, 소셜미디어를 잠깐 확인하는 모든 행동이 우리의 주의를 파편화한다. 하지만 신경과학이 우리에게 말해주는 것은 이렇다. '딥 워크', 즉 인지적으로 까다로운 작업에 산만함 없이 집중하는 능력은 점점 더 희소해지고 더 가치 있어지고 있다. 뇌는 우리가 완전히 몰입했을 때 정보를 가장 효과적으로 통합한다. 우리가 스스로에게 뭐라 말하든, 멀티태스킹은 우리를 더 생산적으로 만들지 않는다. 그저 우리가 하는 모든 것을 더 못하게 만들 뿐이다. 해결책은 더 많은 의지력이 아니다. 깊은 집중이 예외가 아닌 기본이 되도록 환경을 설계하는 것이다.",
+      "audio": "audio/listen_w30_005.mp3",
+      "audio_slow": "audio/listen_w30_005_slow.mp3",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple_choice",
+          "question_ko": "강연자가 제시하는 해결책은?",
+          "options": [
+            "더 강한 의지력 기르기",
+            "멀티태스킹 능력 향상시키기",
+            "깊은 집중이 가능하도록 환경 설계하기",
+            "소셜미디어 사용을 완전히 끊기"
+          ],
+          "correct_index": 2,
+          "explanation_ko": "마지막 문장 'designing your environment so that deep focus becomes the default' 가 핵심."
+        },
+        {
+          "id": "q2",
+          "type": "fill_blank",
+          "prompt_en": "The brain ___ information most effectively when we're fully engaged.",
+          "answer": "consolidates",
+          "alternatives": ["consolidate"]
+        }
+      ],
+      "difficulty": 5,
+      "tags": ["monologue", "cognition", "수능고난도"]
+    }
+  ]
+}

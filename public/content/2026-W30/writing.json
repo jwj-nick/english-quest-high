@@ -1,0 +1,65 @@
+{
+  "week": "2026-W30",
+  "items": [
+    {
+      "id": "write_w30_001",
+      "type": "topic",
+      "prompt_ko": "당신의 가장 효과적인 공부 방법에 대해 2~3문장으로 영작하세요.",
+      "prompt_en": "Write 2-3 sentences about your most effective study method.",
+      "target_length_words": [40, 80],
+      "grammar_focus": ["present simple", "reason clause (because/so)"],
+      "vocabulary_suggestions": ["effective", "concentrate", "retain", "review", "method"],
+      "sample_answer_en": "My most effective study method is reviewing my notes for a short time every day rather than studying for hours just before an exam. This way, I retain the information much longer because my brain has more chances to reinforce what I learned.",
+      "difficulty": 3,
+      "tags": ["personal", "study"]
+    },
+    {
+      "id": "write_w30_002",
+      "type": "translation",
+      "prompt_ko": "다음 한국어 문장을 영어로 번역하세요. (수능 어법 포인트: 가정법 과거완료)\n'어제 시험 공부를 더 했더라면, 그 문제를 풀 수 있었을 것이다.'",
+      "prompt_en": "Translate to English (grammar focus: past perfect conditional):\n'If I had studied more for the test yesterday, I could have solved that problem.'",
+      "target_length_words": [10, 20],
+      "grammar_focus": ["past perfect conditional", "if + had p.p., could have p.p."],
+      "vocabulary_suggestions": [],
+      "sample_answer_en": "If I had studied more for the test yesterday, I could have solved that problem.",
+      "difficulty": 4,
+      "tags": ["수능어법", "가정법"]
+    },
+    {
+      "id": "write_w30_003",
+      "type": "topic",
+      "prompt_ko": "기억력을 향상시키기 위해 일상에서 할 수 있는 한 가지 작은 변화를 제안하고, 그 이유를 2~3문장으로 설명하세요.",
+      "prompt_en": "Suggest one small daily change to improve memory, and explain why in 2-3 sentences.",
+      "target_length_words": [50, 100],
+      "grammar_focus": ["modal verbs (should, can)", "reason clauses"],
+      "vocabulary_suggestions": ["habit", "improve", "consolidate", "retention", "consistent"],
+      "sample_answer_en": "One small change that can improve memory is reviewing what you learned right before going to sleep. Research suggests that the brain consolidates memories during sleep, so this timing helps the information stick more effectively.",
+      "difficulty": 4,
+      "tags": ["argumentative", "study"]
+    },
+    {
+      "id": "write_w30_004",
+      "type": "grammar",
+      "prompt_ko": "다음 문장의 어법 오류를 찾아 고친 뒤, 올바른 문장을 영어로 작성하세요.\n'The more you will practice, the better you will remember.'",
+      "prompt_en": "Find and fix the grammar error, then write the correct sentence.",
+      "target_length_words": [8, 15],
+      "grammar_focus": ["the + 비교급 + S + V, the + 비교급 + S + V (will 불필요)"],
+      "vocabulary_suggestions": [],
+      "sample_answer_en": "The more you practice, the better you will remember.",
+      "difficulty": 4,
+      "tags": ["수능어법", "비교급"]
+    },
+    {
+      "id": "write_w30_005",
+      "type": "topic",
+      "prompt_ko": "이번 주에 새로 배운 단어 중 하나를 골라, 그 단어를 사용한 자연스러운 영어 문장을 두 개 작성하세요. (단어와 의미를 먼저 적은 후 예문을 작성)",
+      "prompt_en": "Pick one new word from this week's vocabulary. Write two natural English sentences using it. (Start with the word and its meaning.)",
+      "target_length_words": [20, 50],
+      "grammar_focus": ["varied sentence structure"],
+      "vocabulary_suggestions": [],
+      "sample_answer_en": "Word: contemplate (심사숙고하다)\nSentence 1: Before making a big decision, it's wise to contemplate the long-term consequences.\nSentence 2: She sat by the window and contemplated her future career path.",
+      "difficulty": 3,
+      "tags": ["vocabulary", "application"]
+    }
+  ]
+}

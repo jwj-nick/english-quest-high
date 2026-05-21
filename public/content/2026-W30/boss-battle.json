@@ -1,0 +1,66 @@
+{
+  "week": "2026-W30",
+  "boss_name": "Memory Master",
+  "boss_description_ko": "이번 주 'Learning and Memory' 주제로 학습한 모든 영역을 종합한 5단계 미니 게임. 모두 클리어하면 다음 주 듣기 영역 XP 2배 버프 획득.",
+  "boss_emoji": "🧠",
+  "stages": [
+    {
+      "stage": 1,
+      "type": "vocabulary_rush",
+      "description_ko": "30초 안에 이번 주 단어 8개의 의미를 맞춰라.",
+      "config": {
+        "item_ids": [
+          "vocab_w30_002",
+          "vocab_w30_005",
+          "vocab_w30_006",
+          "vocab_w30_009",
+          "vocab_w30_011",
+          "vocab_w30_012",
+          "vocab_w30_013",
+          "vocab_w30_015"
+        ],
+        "time_limit_seconds": 30
+      }
+    },
+    {
+      "stage": 2,
+      "type": "listening_clip",
+      "description_ko": "이번 주 듣기 클립에서 핵심 문장을 받아쓰기 하라.",
+      "config": {
+        "source_id": "listen_w30_002",
+        "target_sentence": "Each time you review the material, the curve becomes less steep, meaning you forget more slowly."
+      }
+    },
+    {
+      "stage": 3,
+      "type": "reading_summary",
+      "description_ko": "독해 지문의 핵심 메시지를 영어로 한 문장으로 요약하라.",
+      "config": {
+        "source_id": "read_w30_002",
+        "expected_keywords": ["spacing", "distribute", "time", "better", "cramming", "consolidation"]
+      }
+    },
+    {
+      "stage": 4,
+      "type": "speaking_chain",
+      "description_ko": "주어진 시작 문장에 이어 너의 의견을 영어로 최소 두 문장 말하라.",
+      "config": {
+        "prompt_en": "Many students believe that studying longer means learning more. However, ...",
+        "min_sentences": 2
+      }
+    },
+    {
+      "stage": 5,
+      "type": "writing_quick",
+      "description_ko": "60초 안에 이번 주 가장 흥미로웠던 개념에 대해 영어로 2문장 작성하라.",
+      "config": {
+        "prompt_ko": "이번 주 가장 흥미로웠던 학습 관련 개념과 그 이유를 영어 2문장으로.",
+        "time_limit_seconds": 60
+      }
+    }
+  ],
+  "reward": {
+    "xp": 500,
+    "buff_next_week": "double_xp_listening"
+  }
+}

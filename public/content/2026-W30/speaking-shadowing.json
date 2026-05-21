@@ -1,0 +1,105 @@
+{
+  "week": "2026-W30",
+  "items": [
+    {
+      "id": "shadow_w30_001",
+      "sentence_en": "Studies have shown that spaced repetition significantly improves long-term retention.",
+      "sentence_ko": "연구들은 분산 반복이 장기 기억력을 크게 향상시킨다는 것을 보여왔다.",
+      "audio_normal": "audio/shadow_w30_001.mp3",
+      "audio_slow": "audio/shadow_w30_001_slow.mp3",
+      "phonetics_focus": ["spaced", "repetition", "retention"],
+      "difficulty": 3,
+      "tags": ["study"]
+    },
+    {
+      "id": "shadow_w30_002",
+      "sentence_en": "What matters most is not how long you study, but how consistently you review.",
+      "sentence_ko": "가장 중요한 것은 얼마나 오래 공부하는가가 아니라, 얼마나 꾸준히 복습하는가이다.",
+      "audio_normal": "audio/shadow_w30_002.mp3",
+      "audio_slow": "audio/shadow_w30_002_slow.mp3",
+      "phonetics_focus": ["consistently", "review"],
+      "difficulty": 3,
+      "tags": ["study", "수능구문"]
+    },
+    {
+      "id": "shadow_w30_003",
+      "sentence_en": "If you had reviewed your notes earlier, you would have remembered the answer.",
+      "sentence_ko": "필기를 더 일찍 복습했더라면, 너는 그 답을 기억했을 것이다.",
+      "audio_normal": "audio/shadow_w30_003.mp3",
+      "audio_slow": "audio/shadow_w30_003_slow.mp3",
+      "phonetics_focus": ["reviewed", "would have"],
+      "difficulty": 4,
+      "tags": ["수능구문", "가정법"]
+    },
+    {
+      "id": "shadow_w30_004",
+      "sentence_en": "The brain consolidates memories most effectively when we are fully engaged in deep work.",
+      "sentence_ko": "뇌는 우리가 딥 워크에 완전히 몰입했을 때 기억을 가장 효과적으로 통합한다.",
+      "audio_normal": "audio/shadow_w30_004.mp3",
+      "audio_slow": "audio/shadow_w30_004_slow.mp3",
+      "phonetics_focus": ["consolidates", "engaged", "deep work"],
+      "difficulty": 4,
+      "tags": ["cognition"]
+    },
+    {
+      "id": "shadow_w30_005",
+      "sentence_en": "Active recall, which forces the brain to retrieve information without cues, is far more effective than passive re-reading.",
+      "sentence_ko": "단서 없이 정보를 인출하도록 뇌를 강제하는 능동적 인출은, 수동적인 다시 읽기보다 훨씬 효과적이다.",
+      "audio_normal": "audio/shadow_w30_005.mp3",
+      "audio_slow": "audio/shadow_w30_005_slow.mp3",
+      "phonetics_focus": ["recall", "retrieve", "cues", "passive"],
+      "difficulty": 5,
+      "tags": ["수능구문", "관계대명사"]
+    },
+    {
+      "id": "shadow_w30_006",
+      "sentence_en": "Having reviewed the material three times, she felt confident about the upcoming exam.",
+      "sentence_ko": "그 자료를 세 번 복습했기에, 그녀는 다가오는 시험에 자신감을 느꼈다.",
+      "audio_normal": "audio/shadow_w30_006.mp3",
+      "audio_slow": "audio/shadow_w30_006_slow.mp3",
+      "phonetics_focus": ["reviewed", "confident", "upcoming"],
+      "difficulty": 4,
+      "tags": ["수능구문", "분사구문"]
+    },
+    {
+      "id": "shadow_w30_007",
+      "sentence_en": "Reading without reflection is like eating without digesting.",
+      "sentence_ko": "성찰 없는 읽기는 소화 없는 식사와 같다.",
+      "audio_normal": "audio/shadow_w30_007.mp3",
+      "audio_slow": "audio/shadow_w30_007_slow.mp3",
+      "phonetics_focus": ["reflection", "digesting"],
+      "difficulty": 3,
+      "tags": ["abstract", "metaphor"]
+    },
+    {
+      "id": "shadow_w30_008",
+      "sentence_en": "It is not enough to gather information; we must also discern what truly matters.",
+      "sentence_ko": "정보를 모으는 것만으로는 충분하지 않다. 우리는 진정 무엇이 중요한지를 식별해야 한다.",
+      "audio_normal": "audio/shadow_w30_008.mp3",
+      "audio_slow": "audio/shadow_w30_008_slow.mp3",
+      "phonetics_focus": ["enough", "discern", "truly"],
+      "difficulty": 4,
+      "tags": ["abstract", "수능구문"]
+    },
+    {
+      "id": "shadow_w30_009",
+      "sentence_en": "The more deeply you engage with a topic, the more likely you are to remember it.",
+      "sentence_ko": "한 주제에 더 깊이 몰입할수록, 더 많이 기억할 가능성이 높다.",
+      "audio_normal": "audio/shadow_w30_009.mp3",
+      "audio_slow": "audio/shadow_w30_009_slow.mp3",
+      "phonetics_focus": ["deeply", "engage", "likely"],
+      "difficulty": 4,
+      "tags": ["수능구문", "the more~the more"]
+    },
+    {
+      "id": "shadow_w30_010",
+      "sentence_en": "Curiosity, far from being a luxury, is essential to the way our brains learn and grow.",
+      "sentence_ko": "호기심은, 사치이기는커녕, 우리의 뇌가 배우고 성장하는 방식에 있어서 본질적이다.",
+      "audio_normal": "audio/shadow_w30_010.mp3",
+      "audio_slow": "audio/shadow_w30_010_slow.mp3",
+      "phonetics_focus": ["curiosity", "luxury", "essential"],
+      "difficulty": 5,
+      "tags": ["abstract", "수능고난도"]
+    }
+  ]
+}
