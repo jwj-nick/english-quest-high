@@ -44,7 +44,7 @@ export function ReadingHub({ items, xpWeight }: Props) {
       <div className="space-y-5">
         <button
           onClick={() => setView({ kind: 'list' })}
-          className="inline-flex items-center gap-1 text-sm text-slate-600 hover:text-slate-900"
+          className="inline-flex items-center gap-1 text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
         >
           <ArrowLeft className="h-4 w-4" />
           목록으로
@@ -73,15 +73,15 @@ export function ReadingHub({ items, xpWeight }: Props) {
   return (
     <div className="space-y-5">
       <header>
-        <div className="text-xs text-amber-600 font-semibold uppercase tracking-wider">
+        <div className="text-xs text-amber-600 dark:text-amber-400 font-semibold uppercase tracking-wider">
           책의 도서관
         </div>
-        <h1 className="text-2xl font-bold text-slate-900 mt-0.5">독해</h1>
-        <p className="text-sm text-slate-600 mt-1">{items.length}개 지문 · 천천히 읽고 추론해봐요</p>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mt-0.5">독해</h1>
+        <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">{items.length}개 지문 · 천천히 읽고 추론해봐요</p>
       </header>
 
       {items.length === 0 ? (
-        <Card className="p-6 text-center text-slate-500">
+        <Card className="p-6 text-center text-slate-500 dark:text-slate-400">
           <p className="text-sm">아직 지문이 없어요.</p>
         </Card>
       ) : (
@@ -91,13 +91,13 @@ export function ReadingHub({ items, xpWeight }: Props) {
               key={it.id}
               onClick={() => setView({ kind: 'play', item: it })}
               className={cn(
-                'w-full text-left rounded-3xl border bg-white p-4 transition-all',
-                'border-slate-200 hover:border-amber-300 hover:bg-amber-50/40 active:scale-[0.99]'
+                'w-full text-left rounded-3xl border bg-white dark:bg-slate-800/60 p-4 transition-all',
+                'border-slate-200 dark:border-slate-700 hover:border-amber-300 dark:hover:border-amber-600 hover:bg-amber-50/40 dark:hover:bg-amber-900/20 active:scale-[0.99]'
               )}
             >
               <div className="flex items-start gap-3">
-                <div className="w-11 h-11 rounded-2xl bg-amber-100 flex items-center justify-center">
-                  <BookOpen className="h-5 w-5 text-amber-700" />
+                <div className="w-11 h-11 rounded-2xl bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center">
+                  <BookOpen className="h-5 w-5 text-amber-700 dark:text-amber-300" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5 flex-wrap mb-0.5">
@@ -109,8 +109,8 @@ export function ReadingHub({ items, xpWeight }: Props) {
                     </Badge>
                     <DotDifficulty level={it.difficulty} />
                   </div>
-                  <h3 className="text-sm font-semibold text-slate-900 truncate">{it.title}</h3>
-                  <p className="text-xs text-slate-500 mt-0.5 line-clamp-2">{it.passage_en}</p>
+                  <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100 truncate">{it.title}</h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 line-clamp-2">{it.passage_en}</p>
                 </div>
               </div>
             </button>
@@ -126,7 +126,7 @@ function DotDifficulty({ level }: { level: number }) {
   return (
     <span className="inline-flex items-center gap-0.5">
       {Array.from({ length: 5 }, (_, i) => (
-        <span key={i} className={cn('w-1 h-3 rounded-sm', i < level ? c : 'bg-slate-200')} />
+        <span key={i} className={cn('w-1 h-3 rounded-sm', i < level ? c : 'bg-slate-200 dark:bg-slate-700')} />
       ))}
     </span>
   )

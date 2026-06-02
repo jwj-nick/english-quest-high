@@ -66,13 +66,13 @@ export function CardMatch({ items, pairCount = 6, onComplete }: Props) {
   }
 
   if (round.length === 0) {
-    return <p className="text-center text-slate-500 py-8">단어 데이터가 없어요.</p>
+    return <p className="text-center text-slate-500 dark:text-slate-400 py-8">단어 데이터가 없어요.</p>
   }
 
   return (
     <div className="space-y-5">
       <div>
-        <div className="flex items-center justify-between text-sm text-slate-600 mb-1.5">
+        <div className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-300 mb-1.5">
           <span>짝 맞추기 — 영어 단어와 한국어 뜻을 연결하세요</span>
           <span className="tabular-nums">
             {matchedPairIds.size}/{round.length}
@@ -95,10 +95,10 @@ export function CardMatch({ items, pairCount = 6, onComplete }: Props) {
                 'min-h-[78px] rounded-2xl p-3 text-sm font-medium transition-all border',
                 'flex items-center justify-center text-center',
                 'focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400',
-                matched && 'bg-emerald-50 border-emerald-200 text-emerald-700',
-                !matched && selected && 'bg-violet-100 border-violet-300 text-violet-800 scale-105',
-                !matched && wrong && 'bg-rose-50 border-rose-300 text-rose-700 animate-shake',
-                !matched && !selected && !wrong && 'bg-white border-slate-200 hover:bg-slate-50 active:bg-slate-100',
+                matched && 'bg-emerald-50 dark:bg-emerald-900/30 border-emerald-200 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300',
+                !matched && selected && 'bg-violet-100 dark:bg-violet-900/40 border-violet-300 dark:border-violet-600 text-violet-800 dark:text-violet-200 scale-105',
+                !matched && wrong && 'bg-rose-50 dark:bg-rose-900/30 border-rose-300 dark:border-rose-700 text-rose-700 dark:text-rose-300 animate-shake',
+                !matched && !selected && !wrong && 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700 active:bg-slate-100',
                 tile.kind === 'word' && 'font-semibold'
               )}
             >
@@ -111,12 +111,12 @@ export function CardMatch({ items, pairCount = 6, onComplete }: Props) {
       </div>
 
       {matchedPairIds.size === round.length && (
-        <Card className="p-4 bg-gradient-to-br from-emerald-50 to-emerald-100 border-emerald-200 animate-pop">
-          <div className="flex items-center gap-2 text-emerald-700 font-semibold">
+        <Card className="p-4 bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/30 dark:to-emerald-900/10 border-emerald-200 dark:border-emerald-700 animate-pop">
+          <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300 font-semibold">
             <Sparkles className="h-4 w-4" />
             모두 맞췄어요!
           </div>
-          <p className="text-xs text-emerald-600 mt-1">실수 {mistakes}회. 잠시 후 결과 화면.</p>
+          <p className="text-xs text-emerald-600 dark:text-emerald-400 mt-1">실수 {mistakes}회. 잠시 후 결과 화면.</p>
         </Card>
       )}
     </div>

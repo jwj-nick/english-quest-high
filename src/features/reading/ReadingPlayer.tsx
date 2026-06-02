@@ -46,7 +46,7 @@ export function ReadingPlayer({ item, onComplete }: Props) {
     return (
       <div className="space-y-4">
         <div className="flex items-center justify-between flex-wrap gap-2">
-          <h2 className="text-lg font-bold text-slate-900">{item.title}</h2>
+          <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">{item.title}</h2>
           <div className="flex gap-1.5">
             <Button
               size="sm"
@@ -67,13 +67,13 @@ export function ReadingPlayer({ item, onComplete }: Props) {
           </div>
         </div>
 
-        <Card className="p-5 bg-gradient-to-br from-amber-50/50 to-white">
-          <p className="text-[15px] sm:text-base text-slate-800 leading-[1.85] whitespace-pre-wrap">
+        <Card className="p-5 bg-gradient-to-br from-amber-50/50 to-white dark:from-amber-900/20 dark:to-slate-800/40">
+          <p className="text-[15px] sm:text-base text-slate-800 dark:text-slate-100 leading-[1.85] whitespace-pre-wrap">
             {item.passage_en}
           </p>
           {showKo && (
-            <div className="mt-4 pt-4 border-t border-amber-200">
-              <p className="text-sm text-slate-600 leading-relaxed whitespace-pre-wrap">
+            <div className="mt-4 pt-4 border-t border-amber-200 dark:border-amber-700">
+              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed whitespace-pre-wrap">
                 {item.passage_ko}
               </p>
             </div>
@@ -81,15 +81,15 @@ export function ReadingPlayer({ item, onComplete }: Props) {
         </Card>
 
         {showVocab && item.vocabulary_notes.length > 0 && (
-          <Card className="p-4 bg-slate-50">
-            <div className="text-[10px] uppercase tracking-wider font-semibold text-slate-500 mb-2">
+          <Card className="p-4 bg-slate-50 dark:bg-slate-800/60">
+            <div className="text-[10px] uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400 mb-2">
               지문 속 어휘
             </div>
             <div className="grid gap-1.5">
               {item.vocabulary_notes.map((v) => (
                 <div key={v.word} className="text-sm flex justify-between gap-3">
-                  <span className="font-semibold text-slate-900">{v.word}</span>
-                  <span className="text-slate-600">{v.meaning_ko}</span>
+                  <span className="font-semibold text-slate-900 dark:text-slate-100">{v.word}</span>
+                  <span className="text-slate-600 dark:text-slate-300">{v.meaning_ko}</span>
                 </div>
               ))}
             </div>
@@ -108,7 +108,7 @@ export function ReadingPlayer({ item, onComplete }: Props) {
   return (
     <div className="space-y-5">
       <div>
-        <div className="flex items-center justify-between text-sm text-slate-600 mb-1.5">
+        <div className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-300 mb-1.5">
           <span className="flex items-center gap-1.5">
             <Badge tone="amber" className="text-[10px]">
               {q.type}
@@ -122,8 +122,8 @@ export function ReadingPlayer({ item, onComplete }: Props) {
         <ProgressBar value={qIdx + (revealed ? 1 : 0)} max={item.questions.length} color="amber" />
       </div>
 
-      <Card className="p-5 bg-white">
-        <p className="text-[15px] sm:text-base text-slate-800 leading-relaxed whitespace-pre-wrap">
+      <Card className="p-5 bg-white dark:bg-slate-800/60">
+        <p className="text-[15px] sm:text-base text-slate-800 dark:text-slate-100 leading-relaxed whitespace-pre-wrap">
           {q.question_ko}
         </p>
       </Card>
@@ -140,19 +140,19 @@ export function ReadingPlayer({ item, onComplete }: Props) {
               className={cn(
                 'w-full text-left rounded-2xl border p-3.5 text-sm font-medium transition-all',
                 'flex items-start gap-3',
-                !revealed && 'bg-white border-slate-200 hover:bg-slate-50 active:scale-[0.99]',
-                revealed && isCorrect && 'bg-emerald-50 border-emerald-300 text-emerald-700',
-                revealed && isSelected && !isCorrect && 'bg-rose-50 border-rose-300 text-rose-700 animate-shake',
-                revealed && !isSelected && !isCorrect && 'bg-white border-slate-200 text-slate-400'
+                !revealed && 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700 active:scale-[0.99]',
+                revealed && isCorrect && 'bg-emerald-50 dark:bg-emerald-900/30 border-emerald-300 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300',
+                revealed && isSelected && !isCorrect && 'bg-rose-50 dark:bg-rose-900/30 border-rose-300 dark:border-rose-700 text-rose-700 dark:text-rose-300 animate-shake',
+                revealed && !isSelected && !isCorrect && 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500'
               )}
             >
               <span
                 className={cn(
                   'flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold flex-shrink-0',
-                  isSelected && isCorrect && 'bg-emerald-200 text-emerald-700',
-                  isSelected && !isCorrect && revealed && 'bg-rose-200 text-rose-700',
-                  !isSelected && revealed && isCorrect && 'bg-emerald-200 text-emerald-700',
-                  !revealed && 'bg-slate-100 text-slate-600'
+                  isSelected && isCorrect && 'bg-emerald-200 dark:bg-emerald-800 text-emerald-700 dark:text-emerald-200',
+                  isSelected && !isCorrect && revealed && 'bg-rose-200 dark:bg-rose-800 text-rose-700 dark:text-rose-200',
+                  !isSelected && revealed && isCorrect && 'bg-emerald-200 dark:bg-emerald-800 text-emerald-700 dark:text-emerald-200',
+                  !revealed && 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
                 )}
               >
                 {revealed && isCorrect ? (
@@ -171,11 +171,11 @@ export function ReadingPlayer({ item, onComplete }: Props) {
 
       {revealed && (
         <div className="animate-pop space-y-3">
-          <Card className="p-4 bg-amber-50/60 border-amber-200">
-            <div className="text-[10px] uppercase tracking-wider font-semibold text-amber-700 mb-1">
+          <Card className="p-4 bg-amber-50/60 dark:bg-amber-900/20 border-amber-200 dark:border-amber-700">
+            <div className="text-[10px] uppercase tracking-wider font-semibold text-amber-700 dark:text-amber-300 mb-1">
               해설
             </div>
-            <p className="text-sm text-slate-700 leading-relaxed">{q.explanation_ko}</p>
+            <p className="text-sm text-slate-700 dark:text-slate-200 leading-relaxed">{q.explanation_ko}</p>
           </Card>
           <Button onClick={onNext} className="w-full" size="lg">
             {qIdx + 1 >= item.questions.length ? '결과 보기' : '다음 문제'}

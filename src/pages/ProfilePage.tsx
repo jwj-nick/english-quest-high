@@ -20,11 +20,11 @@ const CLASSES = [
 ] as const
 
 const ACCENT_STYLES: Record<string, string> = {
-  violet: 'bg-violet-100 text-violet-800 ring-violet-300',
-  rose: 'bg-rose-100 text-rose-800 ring-rose-300',
-  emerald: 'bg-emerald-100 text-emerald-800 ring-emerald-300',
-  amber: 'bg-amber-100 text-amber-800 ring-amber-300',
-  sky: 'bg-sky-100 text-sky-800 ring-sky-300',
+  violet: 'bg-violet-100 dark:bg-violet-900/40 text-violet-800 dark:text-violet-200 ring-violet-300 dark:ring-violet-600',
+  rose: 'bg-rose-100 dark:bg-rose-900/40 text-rose-800 dark:text-rose-200 ring-rose-300 dark:ring-rose-600',
+  emerald: 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-200 ring-emerald-300 dark:ring-emerald-600',
+  amber: 'bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-200 ring-amber-300 dark:ring-amber-600',
+  sky: 'bg-sky-100 dark:bg-sky-900/40 text-sky-800 dark:text-sky-200 ring-sky-300 dark:ring-sky-600',
 }
 
 export function ProfilePage() {
@@ -68,15 +68,15 @@ export function ProfilePage() {
       {/* Header */}
       <header className="text-center pt-2">
         <div className="text-7xl mb-2 animate-pop">{profile.avatar}</div>
-        <h1 className="text-2xl font-bold text-slate-900">{profile.name}</h1>
-        <p className="text-sm text-slate-600 mt-0.5">
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">{profile.name}</h1>
+        <p className="text-sm text-slate-600 dark:text-slate-300 mt-0.5">
           Lv.{lv.level} · {levelTitle(lv.level)}
         </p>
       </header>
 
       {/* Name */}
       <Card className="p-4">
-        <label className="text-xs font-semibold text-slate-600 uppercase tracking-wider">
+        <label className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
           이름
         </label>
         <div className="mt-2 flex gap-2">
@@ -85,7 +85,7 @@ export function ProfilePage() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             maxLength={16}
-            className="flex-1 rounded-xl border border-slate-200 px-3 h-11 text-sm focus:outline-none focus:ring-2 focus:ring-violet-300"
+            className="flex-1 rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 px-3 h-11 text-sm focus:outline-none focus:ring-2 focus:ring-violet-300"
             placeholder="이름을 적어주세요"
           />
           <Button variant="secondary" onClick={onSaveName} disabled={name.trim() === profile.name}>
@@ -96,7 +96,7 @@ export function ProfilePage() {
 
       {/* Avatar */}
       <Card className="p-4">
-        <label className="text-xs font-semibold text-slate-600 uppercase tracking-wider">
+        <label className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
           아바타
         </label>
         <div className="mt-2 grid grid-cols-6 gap-2">
@@ -107,8 +107,8 @@ export function ProfilePage() {
               className={cn(
                 'aspect-square rounded-2xl text-3xl flex items-center justify-center transition-all',
                 profile.avatar === a
-                  ? 'bg-violet-100 ring-2 ring-violet-400 scale-105'
-                  : 'bg-slate-50 hover:bg-slate-100'
+                  ? 'bg-violet-100 dark:bg-violet-900/40 ring-2 ring-violet-400 scale-105'
+                  : 'bg-slate-50 dark:bg-slate-700/50 hover:bg-slate-100 dark:hover:bg-slate-700'
               )}
             >
               {a}
@@ -119,7 +119,7 @@ export function ProfilePage() {
 
       {/* Class */}
       <Card className="p-4">
-        <label className="text-xs font-semibold text-slate-600 uppercase tracking-wider">
+        <label className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
           직업
         </label>
         <div className="mt-2 grid grid-cols-2 gap-2">
@@ -130,23 +130,23 @@ export function ProfilePage() {
               className={cn(
                 'rounded-2xl p-3 flex items-center gap-2 transition-all',
                 profile.classChoice === c.key
-                  ? 'bg-violet-100 ring-2 ring-violet-400'
-                  : 'bg-slate-50 hover:bg-slate-100'
+                  ? 'bg-violet-100 dark:bg-violet-900/40 ring-2 ring-violet-400'
+                  : 'bg-slate-50 dark:bg-slate-700/50 hover:bg-slate-100 dark:hover:bg-slate-700'
               )}
             >
               <span className="text-2xl">{c.emoji}</span>
-              <span className="text-sm font-semibold text-slate-800">{c.label}</span>
+              <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">{c.label}</span>
             </button>
           ))}
         </div>
-        <p className="text-[11px] text-slate-500 mt-2">
+        <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-2">
           직업은 표시용이에요. 곧 직업별 보너스가 추가될 예정 :)
         </p>
       </Card>
 
       {/* Accent */}
       <Card className="p-4">
-        <label className="text-xs font-semibold text-slate-600 uppercase tracking-wider">
+        <label className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
           포인트 색
         </label>
         <div className="mt-2 flex gap-2">
@@ -183,7 +183,7 @@ export function ProfilePage() {
 
       {/* Data */}
       <Card className="p-4">
-        <label className="text-xs font-semibold text-slate-600 uppercase tracking-wider">
+        <label className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
           데이터
         </label>
         <div className="mt-2 space-y-2">
@@ -202,7 +202,7 @@ export function ProfilePage() {
         </div>
       </Card>
 
-      <p className="text-center text-[11px] text-slate-400 pb-4">
+      <p className="text-center text-[11px] text-slate-400 dark:text-slate-500 pb-4">
         English Quest · 모든 기록은 이 브라우저에만 저장돼요
       </p>
       <div className="text-center">

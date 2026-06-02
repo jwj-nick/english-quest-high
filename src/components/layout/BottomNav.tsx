@@ -10,7 +10,7 @@ const items = [
 
 export function BottomNav() {
   return (
-    <nav className="md:hidden fixed bottom-0 inset-x-0 z-30 glass border-t border-slate-200/60 safe-bottom">
+    <nav className="md:hidden fixed bottom-0 inset-x-0 z-30 glass border-t border-slate-200/60 dark:border-slate-700/60 safe-bottom">
       <div className="max-w-md mx-auto grid grid-cols-3">
         {items.map(({ to, label, icon: Icon, end }) => (
           <NavLink
@@ -20,7 +20,7 @@ export function BottomNav() {
             className={({ isActive }) =>
               cn(
                 'flex flex-col items-center justify-center gap-0.5 py-2.5 text-[11px] font-medium',
-                isActive ? 'text-violet-600' : 'text-slate-500'
+                isActive ? 'text-violet-600 dark:text-violet-400' : 'text-slate-500 dark:text-slate-400'
               )
             }
           >

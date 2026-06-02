@@ -29,12 +29,12 @@ export function DungeonPage() {
   }
 
   if (loading) {
-    return <p className="text-center text-sm text-slate-500 py-8">던전 입장 중...</p>
+    return <p className="text-center text-sm text-slate-500 dark:text-slate-400 py-8">던전 입장 중...</p>
   }
   if (error) {
     return (
-      <Card className="p-4 border-rose-200 bg-rose-50">
-        <p className="text-sm text-rose-700">{error}</p>
+      <Card className="p-4 border-rose-200 dark:border-rose-700 bg-rose-50 dark:bg-rose-900/20">
+        <p className="text-sm text-rose-700 dark:text-rose-300">{error}</p>
       </Card>
     )
   }
@@ -42,7 +42,7 @@ export function DungeonPage() {
   const xpWeight = (key: string) => weekMeta?.xp_weights[key] ?? 10
 
   if (area === 'vocabulary') {
-    if (!vocab) return <p className="text-center text-sm text-slate-500 py-8">콘텐츠 준비 중...</p>
+    if (!vocab) return <p className="text-center text-sm text-slate-500 dark:text-slate-400 py-8">콘텐츠 준비 중...</p>
     return <VocabHub items={vocab.items} theme={vocab.theme} xpWeight={xpWeight('vocabulary')} week={week} />
   }
   if (area === 'reading') {
@@ -94,11 +94,11 @@ function AreaBody({
   error: string | null
   children: React.ReactNode
 }) {
-  if (loading) return <p className="text-center text-sm text-slate-500 py-8">불러오는 중...</p>
+  if (loading) return <p className="text-center text-sm text-slate-500 dark:text-slate-400 py-8">불러오는 중...</p>
   if (error) {
     return (
-      <Card className="p-4 border-rose-200 bg-rose-50">
-        <p className="text-sm text-rose-700">{error}</p>
+      <Card className="p-4 border-rose-200 dark:border-rose-700 bg-rose-50 dark:bg-rose-900/20">
+        <p className="text-sm text-rose-700 dark:text-rose-300">{error}</p>
       </Card>
     )
   }
@@ -112,11 +112,11 @@ function ComingSoon({ dungeon }: { dungeon: (typeof DUNGEONS)[number] }) {
         <div className={`text-xs font-semibold uppercase tracking-wider ${dungeon.accent}`}>
           {dungeon.title}
         </div>
-        <h1 className="text-2xl font-bold text-slate-900 mt-0.5">아직 잠겨있어요</h1>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mt-0.5">아직 잠겨있어요</h1>
       </header>
-      <Card className="p-6 text-center bg-slate-50">
+      <Card className="p-6 text-center bg-slate-50 dark:bg-slate-800/60">
         <div className="text-5xl mb-2">{dungeon.emoji}</div>
-        <p className="text-sm text-slate-600">곧 열릴 던전이에요. 조금만 기다려줘요!</p>
+        <p className="text-sm text-slate-600 dark:text-slate-300">곧 열릴 던전이에요. 조금만 기다려줘요!</p>
       </Card>
     </div>
   )

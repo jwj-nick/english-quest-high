@@ -97,51 +97,51 @@ export function QAMode({ items, xpWeight }: Props) {
   }
 
   if (items.length === 0) {
-    return <p className="text-center text-sm text-slate-500 py-8">질문이 없어요.</p>
+    return <p className="text-center text-sm text-slate-500 dark:text-slate-400 py-8">질문이 없어요.</p>
   }
 
   return (
     <div className="space-y-4">
       <div>
-        <div className="flex items-center justify-between text-xs text-slate-600 mb-1.5">
+        <div className="flex items-center justify-between text-xs text-slate-600 dark:text-slate-300 mb-1.5">
           <span>{idx + 1} / {items.length}</span>
           <span>완료 {done.size}</span>
         </div>
         <ProgressBar value={done.size} max={items.length} color="rose" />
       </div>
 
-      <Card className="p-5 bg-gradient-to-br from-rose-50 to-white border-rose-200">
+      <Card className="p-5 bg-gradient-to-br from-rose-50 to-white dark:from-rose-900/20 dark:to-slate-800/40 border-rose-200 dark:border-rose-700">
         <div className="flex items-center gap-2 mb-2">
           <Badge tone="rose" className="text-[10px]">
             질문
           </Badge>
           <button
             onClick={() => play(current.question_en)}
-            className="inline-flex items-center gap-1 text-xs font-semibold text-rose-700 hover:text-rose-800"
+            className="inline-flex items-center gap-1 text-xs font-semibold text-rose-700 dark:text-rose-300 hover:text-rose-800 dark:hover:text-rose-200"
           >
             {playing ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5" />}
             듣기
           </button>
         </div>
-        <p className="text-base font-semibold text-slate-900 leading-relaxed">
+        <p className="text-base font-semibold text-slate-900 dark:text-slate-100 leading-relaxed">
           {current.question_en}
         </p>
-        <p className="text-xs text-slate-500 mt-1.5">{current.question_ko}</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1.5">{current.question_ko}</p>
       </Card>
 
-      <Card className="p-4 bg-amber-50/40 border-amber-200">
+      <Card className="p-4 bg-amber-50/40 dark:bg-amber-900/20 border-amber-200 dark:border-amber-700">
         <div className="flex items-start gap-2">
-          <Mic className="h-4 w-4 text-amber-700 mt-0.5 flex-shrink-0" />
+          <Mic className="h-4 w-4 text-amber-700 dark:text-amber-300 mt-0.5 flex-shrink-0" />
           <div>
-            <p className="text-xs font-semibold text-amber-800 mb-1">생각 → 입으로 말하기</p>
-            <p className="text-[11px] text-slate-600 leading-relaxed">
+            <p className="text-xs font-semibold text-amber-800 dark:text-amber-200 mb-1">생각 → 입으로 말하기</p>
+            <p className="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
               머릿속으로 문장을 만들어보고 소리 내어 말해보세요. 그 다음 아래 모범답안을 비교해보세요.
             </p>
           </div>
         </div>
         {current.expected_keywords.length > 0 && (
-          <div className="mt-3 pt-3 border-t border-amber-200">
-            <div className="text-[10px] uppercase tracking-wider font-semibold text-amber-700 mb-1.5">
+          <div className="mt-3 pt-3 border-t border-amber-200 dark:border-amber-700">
+            <div className="text-[10px] uppercase tracking-wider font-semibold text-amber-700 dark:text-amber-300 mb-1.5">
               포함하면 좋은 단어
             </div>
             <div className="flex flex-wrap gap-1.5">
@@ -162,16 +162,16 @@ export function QAMode({ items, xpWeight }: Props) {
           모범답안 보기
         </Button>
       ) : (
-        <Card className="p-4 bg-emerald-50/60 border-emerald-200 animate-pop">
-          <div className="text-[10px] uppercase tracking-wider font-semibold text-emerald-700 mb-1.5">
+        <Card className="p-4 bg-emerald-50/60 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-700 animate-pop">
+          <div className="text-[10px] uppercase tracking-wider font-semibold text-emerald-700 dark:text-emerald-300 mb-1.5">
             모범답안
           </div>
-          <p className="text-sm text-slate-800 leading-relaxed mb-2">
+          <p className="text-sm text-slate-800 dark:text-slate-100 leading-relaxed mb-2">
             {current.sample_answer_en}
           </p>
           <button
             onClick={() => play(current.sample_answer_en)}
-            className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 hover:text-emerald-800"
+            className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300 hover:text-emerald-800 dark:hover:text-emerald-200"
           >
             <Play className="h-3 w-3" />
             모범답안 듣기

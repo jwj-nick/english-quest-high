@@ -37,7 +37,7 @@ export function RoleplayMode({ items }: Props) {
   const item = items[idx]
 
   if (!item) {
-    return <p className="text-center text-sm text-slate-500 py-8">상황극이 없어요.</p>
+    return <p className="text-center text-sm text-slate-500 dark:text-slate-400 py-8">상황극이 없어요.</p>
   }
 
   const play = () => {
@@ -68,38 +68,38 @@ export function RoleplayMode({ items }: Props) {
 
   return (
     <div className="space-y-4">
-      <Card className="p-5 bg-gradient-to-br from-rose-50 to-white border-rose-200">
+      <Card className="p-5 bg-gradient-to-br from-rose-50 to-white dark:from-rose-900/20 dark:to-slate-800/40 border-rose-200 dark:border-rose-700">
         <div className="flex items-center gap-2 mb-2 flex-wrap">
           <Badge tone="rose" className="text-[10px]">
             상황극 {idx + 1} / {items.length}
           </Badge>
           {item.tags.slice(0, 2).map((t) => (
-            <span key={t} className="text-[10px] text-slate-500">
+            <span key={t} className="text-[10px] text-slate-500 dark:text-slate-400">
               #{t}
             </span>
           ))}
         </div>
-        <h3 className="text-base font-bold text-slate-900 mb-1">{item.title}</h3>
-        <p className="text-xs text-slate-600 leading-relaxed">{item.scenario_ko}</p>
+        <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 mb-1">{item.title}</h3>
+        <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">{item.scenario_ko}</p>
 
-        <div className="mt-3 pt-3 border-t border-rose-100 grid grid-cols-2 gap-2 text-xs">
+        <div className="mt-3 pt-3 border-t border-rose-100 dark:border-rose-800 grid grid-cols-2 gap-2 text-xs">
           <div>
-            <div className="text-[10px] uppercase tracking-wider font-semibold text-rose-700">
+            <div className="text-[10px] uppercase tracking-wider font-semibold text-rose-700 dark:text-rose-300">
               내 역할
             </div>
-            <p className="text-slate-700">{item.your_role}</p>
+            <p className="text-slate-700 dark:text-slate-200">{item.your_role}</p>
           </div>
           <div>
-            <div className="text-[10px] uppercase tracking-wider font-semibold text-rose-700">
+            <div className="text-[10px] uppercase tracking-wider font-semibold text-rose-700 dark:text-rose-300">
               AI 역할
             </div>
-            <p className="text-slate-700">{item.ai_role}</p>
+            <p className="text-slate-700 dark:text-slate-200">{item.ai_role}</p>
           </div>
         </div>
 
         {item.vocabulary_hints.length > 0 && (
-          <div className="mt-3 pt-3 border-t border-rose-100">
-            <div className="text-[10px] uppercase tracking-wider font-semibold text-rose-700 mb-1.5">
+          <div className="mt-3 pt-3 border-t border-rose-100 dark:border-rose-800">
+            <div className="text-[10px] uppercase tracking-wider font-semibold text-rose-700 dark:text-rose-300 mb-1.5">
               사용할 만한 표현
             </div>
             <div className="flex flex-wrap gap-1.5">
@@ -114,11 +114,11 @@ export function RoleplayMode({ items }: Props) {
       </Card>
 
       {/* Opening line */}
-      <Card className="p-4 bg-white">
-        <div className="text-[10px] uppercase tracking-wider font-semibold text-slate-500 mb-2">
+      <Card className="p-4 bg-white dark:bg-slate-800/60">
+        <div className="text-[10px] uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400 mb-2">
           시작 대사 (AI)
         </div>
-        <p className="text-base font-semibold text-slate-900 mb-2">"{item.opening_line_en}"</p>
+        <p className="text-base font-semibold text-slate-900 dark:text-slate-100 mb-2">"{item.opening_line_en}"</p>
         <Button size="sm" variant="secondary" onClick={play}>
           {playing ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5" />}
           듣기
@@ -126,12 +126,12 @@ export function RoleplayMode({ items }: Props) {
       </Card>
 
       {/* Claude Pro path */}
-      <Card className="p-4 bg-gradient-to-br from-violet-50 to-violet-100/60 border-violet-200">
+      <Card className="p-4 bg-gradient-to-br from-violet-50 to-violet-100/60 dark:from-violet-900/30 dark:to-violet-900/10 border-violet-200 dark:border-violet-700">
         <div className="flex items-start gap-2 mb-3">
-          <Drama className="h-5 w-5 text-violet-700 flex-shrink-0 mt-0.5" />
+          <Drama className="h-5 w-5 text-violet-700 dark:text-violet-300 flex-shrink-0 mt-0.5" />
           <div>
-            <h4 className="text-sm font-bold text-violet-900">실제 대화 진행하기</h4>
-            <p className="text-[11px] text-slate-600 mt-0.5 leading-relaxed">
+            <h4 className="text-sm font-bold text-violet-900 dark:text-violet-200">실제 대화 진행하기</h4>
+            <p className="text-[11px] text-slate-600 dark:text-slate-300 mt-0.5 leading-relaxed">
               아래 프롬프트를 복사한 다음 Claude에서 음성 입력 모드로 시작하면 진짜 대화처럼 진행돼요.
             </p>
           </div>
@@ -146,7 +146,7 @@ export function RoleplayMode({ items }: Props) {
             href="https://claude.ai/new"
             target="_blank"
             rel="noreferrer noopener"
-            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white border border-violet-200 text-violet-700 h-11 px-4 text-sm font-semibold hover:bg-violet-50"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-800 border border-violet-200 dark:border-violet-700 text-violet-700 dark:text-violet-300 h-11 px-4 text-sm font-semibold hover:bg-violet-50 dark:hover:bg-slate-700"
           >
             <ExternalLink className="h-4 w-4" />
             Claude 열기
@@ -154,10 +154,10 @@ export function RoleplayMode({ items }: Props) {
         </div>
 
         <details className="text-xs">
-          <summary className="cursor-pointer text-violet-700 font-semibold">
+          <summary className="cursor-pointer text-violet-700 dark:text-violet-300 font-semibold">
             프롬프트 미리보기
           </summary>
-          <pre className="mt-2 p-3 bg-white rounded-xl text-[11px] text-slate-700 whitespace-pre-wrap leading-relaxed overflow-x-auto">
+          <pre className="mt-2 p-3 bg-white dark:bg-slate-800 rounded-xl text-[11px] text-slate-700 dark:text-slate-200 whitespace-pre-wrap leading-relaxed overflow-x-auto">
             {fullPrompt}
           </pre>
         </details>

@@ -32,21 +32,21 @@ export function SpeakingHub({ xpWeight, week }: Props) {
   return (
     <div className="space-y-5">
       <header>
-        <div className="text-xs text-rose-600 font-semibold uppercase tracking-wider">
+        <div className="text-xs text-rose-600 dark:text-rose-400 font-semibold uppercase tracking-wider">
           말의 무대
         </div>
-        <h1 className="text-2xl font-bold text-slate-900 mt-0.5">말하기</h1>
-        <p className="text-sm text-slate-600 mt-1">소리 내어 말해봐요</p>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mt-0.5">말하기</h1>
+        <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">소리 내어 말해봐요</p>
       </header>
 
-      <Card className="p-3 bg-slate-50 border-slate-200">
-        <p className="text-[11px] text-slate-500 leading-relaxed">
+      <Card className="p-3 bg-slate-50 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700">
+        <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
           💡 V1: 듣고 따라 말하기 중심. 음성 인식·AI 첨삭은 W5에 연동 예정. 자유 대화는 Claude Pro 안내 페이지로.
         </p>
       </Card>
 
       {/* Tabs */}
-      <div className="grid grid-cols-3 gap-1.5 p-1 bg-slate-100 rounded-2xl">
+      <div className="grid grid-cols-3 gap-1.5 p-1 bg-slate-100 dark:bg-slate-800 rounded-2xl">
         {TABS.map((t) => {
           const Icon = t.icon
           return (
@@ -59,8 +59,8 @@ export function SpeakingHub({ xpWeight, week }: Props) {
               className={cn(
                 'rounded-xl py-2.5 text-xs font-semibold flex flex-col items-center gap-0.5 transition-all',
                 tab === t.key
-                  ? 'bg-white text-rose-700 shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-white dark:bg-slate-700 text-rose-700 dark:text-rose-300 shadow-sm'
+                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100'
               )}
             >
               <Icon className="h-4 w-4" />
@@ -99,11 +99,11 @@ function TabBody({
   error: string | null
   children: React.ReactNode
 }) {
-  if (loading) return <p className="text-center text-sm text-slate-500 py-8">불러오는 중...</p>
+  if (loading) return <p className="text-center text-sm text-slate-500 dark:text-slate-400 py-8">불러오는 중...</p>
   if (error) {
     return (
-      <Card className="p-4 border-rose-200 bg-rose-50">
-        <p className="text-sm text-rose-700">{error}</p>
+      <Card className="p-4 border-rose-200 dark:border-rose-700 bg-rose-50 dark:bg-rose-900/20">
+        <p className="text-sm text-rose-700 dark:text-rose-300">{error}</p>
       </Card>
     )
   }

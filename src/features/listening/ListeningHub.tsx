@@ -55,7 +55,7 @@ export function ListeningHub({ items, xpWeight }: Props) {
             cancel()
             setView({ kind: 'list' })
           }}
-          className="inline-flex items-center gap-1 text-sm text-slate-600 hover:text-slate-900"
+          className="inline-flex items-center gap-1 text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
         >
           <ArrowLeft className="h-4 w-4" />
           목록으로
@@ -84,23 +84,23 @@ export function ListeningHub({ items, xpWeight }: Props) {
   return (
     <div className="space-y-5">
       <header>
-        <div className="text-xs text-sky-600 font-semibold uppercase tracking-wider">
+        <div className="text-xs text-sky-600 dark:text-sky-400 font-semibold uppercase tracking-wider">
           메아리 동굴
         </div>
-        <h1 className="text-2xl font-bold text-slate-900 mt-0.5">듣기</h1>
-        <p className="text-sm text-slate-600 mt-1">
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mt-0.5">듣기</h1>
+        <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">
           {items.length}개 클립 · 브라우저 내장 TTS 사용 ⓘ
         </p>
       </header>
 
-      <Card className="p-3 bg-slate-50 border-slate-200">
-        <p className="text-[11px] text-slate-500 leading-relaxed">
+      <Card className="p-3 bg-slate-50 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700">
+        <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
           💡 V1: 브라우저 내장 TTS로 재생합니다. W4에 자연스러운 음성(mp3)으로 업그레이드 예정.
         </p>
       </Card>
 
       {items.length === 0 ? (
-        <Card className="p-6 text-center text-slate-500">
+        <Card className="p-6 text-center text-slate-500 dark:text-slate-400">
           <p className="text-sm">아직 클립이 없어요.</p>
         </Card>
       ) : (
@@ -110,13 +110,13 @@ export function ListeningHub({ items, xpWeight }: Props) {
               key={it.id}
               onClick={() => setView({ kind: 'play', item: it })}
               className={cn(
-                'w-full text-left rounded-3xl border bg-white p-4 transition-all',
-                'border-slate-200 hover:border-sky-300 hover:bg-sky-50/40 active:scale-[0.99]'
+                'w-full text-left rounded-3xl border bg-white dark:bg-slate-800/60 p-4 transition-all',
+                'border-slate-200 dark:border-slate-700 hover:border-sky-300 dark:hover:border-sky-600 hover:bg-sky-50/40 dark:hover:bg-sky-900/20 active:scale-[0.99]'
               )}
             >
               <div className="flex items-start gap-3">
-                <div className="w-11 h-11 rounded-2xl bg-sky-100 flex items-center justify-center">
-                  <Headphones className="h-5 w-5 text-sky-700" />
+                <div className="w-11 h-11 rounded-2xl bg-sky-100 dark:bg-sky-900/40 flex items-center justify-center">
+                  <Headphones className="h-5 w-5 text-sky-700 dark:text-sky-300" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5 flex-wrap mb-0.5">
@@ -130,7 +130,7 @@ export function ListeningHub({ items, xpWeight }: Props) {
                       {it.questions.length}문항
                     </Badge>
                   </div>
-                  <h3 className="text-sm font-semibold text-slate-900">{it.title}</h3>
+                  <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">{it.title}</h3>
                 </div>
               </div>
             </button>

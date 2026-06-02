@@ -59,21 +59,21 @@ export function WritingPlayer({ item, onComplete }: Props) {
   return (
     <div className="space-y-4">
       {/* Prompt */}
-      <Card className="p-5 bg-gradient-to-br from-violet-50 to-white border-violet-200">
+      <Card className="p-5 bg-gradient-to-br from-violet-50 to-white dark:from-violet-900/20 dark:to-slate-800/40 border-violet-200 dark:border-violet-700">
         <div className="flex items-center gap-1.5 mb-2 flex-wrap">
           <Badge tone="violet" className="text-[10px]">
             {item.type}
           </Badge>
           {item.tags.slice(0, 2).map((t) => (
-            <span key={t} className="text-[10px] text-slate-500">
+            <span key={t} className="text-[10px] text-slate-500 dark:text-slate-400">
               #{t}
             </span>
           ))}
         </div>
-        <p className="text-[15px] font-medium text-slate-900 leading-relaxed whitespace-pre-wrap">
+        <p className="text-[15px] font-medium text-slate-900 dark:text-slate-100 leading-relaxed whitespace-pre-wrap">
           {item.prompt_ko}
         </p>
-        <p className="text-xs text-slate-500 mt-2 leading-relaxed whitespace-pre-wrap">
+        <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed whitespace-pre-wrap">
           {item.prompt_en}
         </p>
       </Card>
@@ -83,16 +83,16 @@ export function WritingPlayer({ item, onComplete }: Props) {
         <div>
           <button
             onClick={() => setShowHints((v) => !v)}
-            className="text-xs text-violet-600 hover:text-violet-700 flex items-center gap-1"
+            className="text-xs text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 flex items-center gap-1"
           >
             <Sparkles className="h-3 w-3" />
             힌트 {showHints ? '숨기기' : '보기'}
           </button>
           {showHints && (
-            <Card className="p-3 mt-2 bg-amber-50/60 border-amber-200">
+            <Card className="p-3 mt-2 bg-amber-50/60 dark:bg-amber-900/20 border-amber-200 dark:border-amber-700">
               {item.grammar_focus.length > 0 && (
                 <div className="mb-2">
-                  <div className="text-[10px] uppercase tracking-wider font-semibold text-amber-700 mb-1">
+                  <div className="text-[10px] uppercase tracking-wider font-semibold text-amber-700 dark:text-amber-300 mb-1">
                     어법 포인트
                   </div>
                   <div className="flex flex-wrap gap-1.5">
@@ -106,7 +106,7 @@ export function WritingPlayer({ item, onComplete }: Props) {
               )}
               {item.vocabulary_suggestions.length > 0 && (
                 <div>
-                  <div className="text-[10px] uppercase tracking-wider font-semibold text-amber-700 mb-1">
+                  <div className="text-[10px] uppercase tracking-wider font-semibold text-amber-700 dark:text-amber-300 mb-1">
                     추천 어휘
                   </div>
                   <div className="flex flex-wrap gap-1.5">
@@ -132,21 +132,21 @@ export function WritingPlayer({ item, onComplete }: Props) {
           rows={8}
           placeholder="여기에 영어로 작성해보세요..."
           className={cn(
-            'w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm leading-relaxed',
+            'w-full rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 px-3 py-2.5 text-sm leading-relaxed',
             'focus:outline-none focus:ring-2 focus:ring-violet-300 resize-y min-h-[180px]',
-            'placeholder:text-slate-400'
+            'placeholder:text-slate-400 dark:placeholder:text-slate-500'
           )}
         />
         <div className="mt-2 flex items-center justify-between text-xs">
           <span
             className={cn(
               'tabular-nums font-semibold',
-              inTarget ? 'text-emerald-600' : isShort ? 'text-amber-600' : 'text-rose-600'
+              inTarget ? 'text-emerald-600 dark:text-emerald-400' : isShort ? 'text-amber-600 dark:text-amber-400' : 'text-rose-600 dark:text-rose-400'
             )}
           >
             {wordCount} words
           </span>
-          <span className="text-slate-500">
+          <span className="text-slate-500 dark:text-slate-400">
             목표: {minW}–{maxW} words {inTarget ? '✓' : isShort ? '(조금만 더!)' : '(짧게 줄여보기)'}
           </span>
         </div>
@@ -159,34 +159,34 @@ export function WritingPlayer({ item, onComplete }: Props) {
       ) : (
         <>
           {/* Sample reveal */}
-          <Card className="p-5 bg-gradient-to-br from-emerald-50 to-white border-emerald-200">
+          <Card className="p-5 bg-gradient-to-br from-emerald-50 to-white dark:from-emerald-900/20 dark:to-slate-800/40 border-emerald-200 dark:border-emerald-700">
             <div className="flex items-center justify-between mb-2">
-              <div className="text-[10px] uppercase tracking-wider font-semibold text-emerald-700">
+              <div className="text-[10px] uppercase tracking-wider font-semibold text-emerald-700 dark:text-emerald-300">
                 모범답안
               </div>
               <button
                 onClick={() => setShowSample((v) => !v)}
-                className="text-xs text-emerald-600 hover:text-emerald-700 flex items-center gap-1"
+                className="text-xs text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 flex items-center gap-1"
               >
                 {showSample ? <EyeOff className="h-3 w-3" /> : <Eye className="h-3 w-3" />}
                 {showSample ? '숨기기' : '보기'}
               </button>
             </div>
             {showSample ? (
-              <p className="text-sm text-slate-800 leading-[1.85] whitespace-pre-wrap">
+              <p className="text-sm text-slate-800 dark:text-slate-100 leading-[1.85] whitespace-pre-wrap">
                 {item.sample_answer_en}
               </p>
             ) : (
-              <p className="text-xs text-slate-400 italic">먼저 본인 답을 충분히 다듬어보세요.</p>
+              <p className="text-xs text-slate-400 dark:text-slate-500 italic">먼저 본인 답을 충분히 다듬어보세요.</p>
             )}
           </Card>
 
           {/* Self rating */}
           <Card className="p-4">
-            <div className="text-[10px] uppercase tracking-wider font-semibold text-slate-500 mb-2">
+            <div className="text-[10px] uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400 mb-2">
               본인 평가
             </div>
-            <p className="text-xs text-slate-600 mb-2">스스로 별점을 매겨주세요 (모범답안과 비교해서)</p>
+            <p className="text-xs text-slate-600 dark:text-slate-300 mb-2">스스로 별점을 매겨주세요 (모범답안과 비교해서)</p>
             <div className="flex gap-1">
               {[1, 2, 3, 4, 5].map((n) => (
                 <button
@@ -196,14 +196,14 @@ export function WritingPlayer({ item, onComplete }: Props) {
                     'flex-1 h-12 rounded-xl border transition-all flex items-center justify-center',
                     selfRating >= n
                       ? 'bg-amber-400 border-amber-500 text-white'
-                      : 'bg-white border-slate-200 text-slate-300'
+                      : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-300 dark:text-slate-600'
                   )}
                 >
                   <Star className={cn('h-5 w-5', selfRating >= n && 'fill-white')} />
                 </button>
               ))}
             </div>
-            <p className="text-[11px] text-slate-500 mt-2 text-center">
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-2 text-center">
               {selfRating === 5 && '아주 잘 썼어요!'}
               {selfRating === 4 && '잘 썼어요. 자잘한 부분만 다듬으면 완벽'}
               {selfRating === 3 && '괜찮아요. 한두 가지 개선점 있음'}

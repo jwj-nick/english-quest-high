@@ -68,7 +68,7 @@ export function WritingHub({ items, xpWeight }: Props) {
       <div className="space-y-5">
         <button
           onClick={() => setView({ kind: 'list' })}
-          className="inline-flex items-center gap-1 text-sm text-slate-600 hover:text-slate-900"
+          className="inline-flex items-center gap-1 text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
         >
           <ArrowLeft className="h-4 w-4" />
           목록으로
@@ -99,23 +99,23 @@ export function WritingHub({ items, xpWeight }: Props) {
   return (
     <div className="space-y-5">
       <header>
-        <div className="text-xs text-violet-600 font-semibold uppercase tracking-wider">
+        <div className="text-xs text-violet-600 dark:text-violet-400 font-semibold uppercase tracking-wider">
           글의 탑
         </div>
-        <h1 className="text-2xl font-bold text-slate-900 mt-0.5">쓰기</h1>
-        <p className="text-sm text-slate-600 mt-1">
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mt-0.5">쓰기</h1>
+        <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">
           {items.length}개 주제 · 모범답안과 비교, 자가 평가 ⓘ
         </p>
       </header>
 
-      <Card className="p-3 bg-slate-50 border-slate-200">
-        <p className="text-[11px] text-slate-500 leading-relaxed">
+      <Card className="p-3 bg-slate-50 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700">
+        <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">
           💡 V1: AI 첨삭은 W5에 연동 예정. 지금은 모범답안 비교 + 본인이 별점 매기는 방식이에요.
         </p>
       </Card>
 
       {items.length === 0 ? (
-        <Card className="p-6 text-center text-slate-500">
+        <Card className="p-6 text-center text-slate-500 dark:text-slate-400">
           <p className="text-sm">아직 주제가 없어요.</p>
         </Card>
       ) : (
@@ -127,13 +127,13 @@ export function WritingHub({ items, xpWeight }: Props) {
                 key={it.id}
                 onClick={() => setView({ kind: 'play', item: it })}
                 className={cn(
-                  'w-full text-left rounded-3xl border bg-white p-4 transition-all',
-                  'border-slate-200 hover:border-violet-300 hover:bg-violet-50/40 active:scale-[0.99]'
+                  'w-full text-left rounded-3xl border bg-white dark:bg-slate-800/60 p-4 transition-all',
+                  'border-slate-200 dark:border-slate-700 hover:border-violet-300 dark:hover:border-violet-600 hover:bg-violet-50/40 dark:hover:bg-violet-900/20 active:scale-[0.99]'
                 )}
               >
                 <div className="flex items-start gap-3">
-                  <div className="w-11 h-11 rounded-2xl bg-violet-100 flex items-center justify-center">
-                    <Pencil className="h-5 w-5 text-violet-700" />
+                  <div className="w-11 h-11 rounded-2xl bg-violet-100 dark:bg-violet-900/40 flex items-center justify-center">
+                    <Pencil className="h-5 w-5 text-violet-700 dark:text-violet-300" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-1.5 flex-wrap mb-1">
@@ -144,7 +144,7 @@ export function WritingHub({ items, xpWeight }: Props) {
                         {it.target_length_words[0]}-{it.target_length_words[1]} words
                       </Badge>
                     </div>
-                    <p className="text-sm text-slate-700 line-clamp-2 leading-relaxed">
+                    <p className="text-sm text-slate-700 dark:text-slate-200 line-clamp-2 leading-relaxed">
                       {it.prompt_ko}
                     </p>
                   </div>

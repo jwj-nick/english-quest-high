@@ -223,12 +223,12 @@ function Section({ title, children, onBack }: { title: string; children: React.R
     <div className="space-y-5">
       <button
         onClick={onBack}
-        className="inline-flex items-center gap-1 text-sm text-slate-600 hover:text-slate-900"
+        className="inline-flex items-center gap-1 text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
       >
         <ArrowLeft className="h-4 w-4" />
         모드 선택으로
       </button>
-      <h2 className="text-lg font-bold text-slate-900">{title}</h2>
+      <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">{title}</h2>
       {children}
     </div>
   )
@@ -250,9 +250,9 @@ function ModeCard({
   className?: string
 }) {
   const colors = {
-    emerald: 'bg-emerald-50 border-emerald-200 hover:bg-emerald-100 text-emerald-800',
-    violet: 'bg-violet-50 border-violet-200 hover:bg-violet-100 text-violet-800',
-    amber: 'bg-amber-50 border-amber-200 hover:bg-amber-100 text-amber-800',
+    emerald: 'bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-700 hover:bg-emerald-100 dark:hover:bg-emerald-900/30 text-emerald-800 dark:text-emerald-200',
+    violet: 'bg-violet-50 dark:bg-violet-900/20 border-violet-200 dark:border-violet-700 hover:bg-violet-100 dark:hover:bg-violet-900/30 text-violet-800 dark:text-violet-200',
+    amber: 'bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-700 hover:bg-amber-100 dark:hover:bg-amber-900/30 text-amber-800 dark:text-amber-200',
   }[accent]
 
   return (
@@ -264,7 +264,7 @@ function ModeCard({
         className
       )}
     >
-      <div className="flex items-center justify-center w-10 h-10 rounded-2xl bg-white/70 mb-2">
+      <div className="flex items-center justify-center w-10 h-10 rounded-2xl bg-white/70 dark:bg-slate-800/60 mb-2">
         {icon}
       </div>
       <h3 className="font-bold text-base">{title}</h3>
@@ -289,13 +289,13 @@ function ResultScreen({ result, onAgain, onMenu }: { result: Result; onAgain: ()
     <div className="max-w-md mx-auto pt-6 space-y-6">
       <div className="text-center animate-pop">
         <div className="text-6xl mb-2">{star === 3 ? '🏆' : star === 2 ? '⭐' : star === 1 ? '💪' : '🌱'}</div>
-        <p className="text-2xl font-bold text-slate-900">{msg}</p>
+        <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">{msg}</p>
       </div>
 
-      <Card className="p-5 bg-gradient-to-br from-amber-50 to-amber-100/70 border-amber-200">
+      <Card className="p-5 bg-gradient-to-br from-amber-50 to-amber-100/70 dark:from-amber-900/30 dark:to-amber-900/10 border-amber-200 dark:border-amber-700">
         <div className="text-center">
-          <div className="text-xs font-semibold text-amber-700 uppercase tracking-wider">획득</div>
-          <div className="text-3xl font-bold text-amber-700 mt-1">+{result.xpEarned} XP</div>
+          <div className="text-xs font-semibold text-amber-700 dark:text-amber-300 uppercase tracking-wider">획득</div>
+          <div className="text-3xl font-bold text-amber-700 dark:text-amber-300 mt-1">+{result.xpEarned} XP</div>
         </div>
         <div className="grid grid-cols-3 gap-3 mt-4 text-center">
           <Stat label="정답" value={`${result.correct}/${result.total}`} />
@@ -317,8 +317,8 @@ function ResultScreen({ result, onAgain, onMenu }: { result: Result; onAgain: ()
 function Stat({ label, value }: { label: string; value: string | number }) {
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-wider text-slate-500">{label}</div>
-      <div className="text-lg font-bold text-slate-900 tabular-nums">{value}</div>
+      <div className="text-[10px] uppercase tracking-wider text-slate-500 dark:text-slate-400">{label}</div>
+      <div className="text-lg font-bold text-slate-900 dark:text-slate-100 tabular-nums">{value}</div>
     </div>
   )
 }

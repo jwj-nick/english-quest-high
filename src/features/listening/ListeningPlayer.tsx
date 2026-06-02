@@ -99,12 +99,12 @@ export function ListeningPlayer({ item, onComplete }: Props) {
   if (phase === 'listening') {
     return (
       <div className="space-y-4">
-        <h2 className="text-lg font-bold text-slate-900">{item.title}</h2>
+        <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">{item.title}</h2>
 
         {/* Player */}
-        <Card className="p-5 bg-gradient-to-br from-sky-50 to-white">
+        <Card className="p-5 bg-gradient-to-br from-sky-50 to-white dark:from-sky-900/20 dark:to-slate-800/40">
           {!isTTSAvailable() && (
-            <p className="text-xs text-rose-600 mb-2">
+            <p className="text-xs text-rose-600 dark:text-rose-400 mb-2">
               이 브라우저는 음성 합성을 지원하지 않아요. 대본을 직접 읽어주세요.
             </p>
           )}
@@ -125,11 +125,11 @@ export function ListeningPlayer({ item, onComplete }: Props) {
           {playing && isDialogue && activeSegmentIdx !== null && (
             <div className="mt-3 flex items-center justify-center gap-2 animate-pop">
               <SpeakerBadge speaker={segments[activeSegmentIdx]?.speaker ?? null} />
-              <span className="text-[11px] text-slate-500">말하는 중...</span>
+              <span className="text-[11px] text-slate-500 dark:text-slate-400">말하는 중...</span>
             </div>
           )}
 
-          <div className="mt-4 flex items-center justify-center gap-2 text-xs text-slate-600">
+          <div className="mt-4 flex items-center justify-center gap-2 text-xs text-slate-600 dark:text-slate-300">
             <span>속도</span>
             {([0.7, 0.85, 1.0] as const).map((r) => (
               <button
@@ -137,7 +137,7 @@ export function ListeningPlayer({ item, onComplete }: Props) {
                 onClick={() => setRate(r)}
                 className={cn(
                   'px-2.5 py-1 rounded-full font-semibold',
-                  rate === r ? 'bg-sky-600 text-white' : 'bg-white text-slate-600 border border-slate-200'
+                  rate === r ? 'bg-sky-600 text-white' : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-600'
                 )}
               >
                 {r === 1.0 ? '1.0x' : `${r}x`}
@@ -146,7 +146,7 @@ export function ListeningPlayer({ item, onComplete }: Props) {
           </div>
 
           {isDialogue && (
-            <div className="mt-3 text-center text-[11px] text-slate-500">
+            <div className="mt-3 text-center text-[11px] text-slate-500 dark:text-slate-400">
               👥 {segments.filter((s) => s.speaker).length}개 대사 · 화자별로 다른 목소리
             </div>
           )}
@@ -173,7 +173,7 @@ export function ListeningPlayer({ item, onComplete }: Props) {
         </div>
 
         {showTranscript && (
-          <Card className="p-4 bg-white">
+          <Card className="p-4 bg-white dark:bg-slate-800/60">
             {isDialogue ? (
               <div className="space-y-2.5">
                 {segments.map((seg, i) => (
@@ -181,21 +181,21 @@ export function ListeningPlayer({ item, onComplete }: Props) {
                     key={i}
                     className={cn(
                       'flex items-start gap-2 rounded-xl px-2 py-1.5 transition-colors',
-                      activeSegmentIdx === i && 'bg-sky-50 ring-1 ring-sky-200'
+                      activeSegmentIdx === i && 'bg-sky-50 dark:bg-sky-900/20 ring-1 ring-sky-200 dark:ring-sky-700'
                     )}
                   >
                     <SpeakerBadge speaker={seg.speaker} compact />
-                    <p className="text-sm text-slate-800 leading-[1.7] flex-1">{seg.text}</p>
+                    <p className="text-sm text-slate-800 dark:text-slate-100 leading-[1.7] flex-1">{seg.text}</p>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-sm text-slate-800 leading-[1.85] whitespace-pre-wrap">
+              <p className="text-sm text-slate-800 dark:text-slate-100 leading-[1.85] whitespace-pre-wrap">
                 {item.transcript_en}
               </p>
             )}
             {showKo && (
-              <p className="text-xs text-slate-500 mt-3 pt-3 border-t border-slate-100 leading-relaxed whitespace-pre-wrap">
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-3 pt-3 border-t border-slate-100 dark:border-slate-700 leading-relaxed whitespace-pre-wrap">
                 {item.transcript_ko}
               </p>
             )}
@@ -214,7 +214,7 @@ export function ListeningPlayer({ item, onComplete }: Props) {
   return (
     <div className="space-y-5">
       <div>
-        <div className="flex items-center justify-between text-sm text-slate-600 mb-1.5">
+        <div className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-300 mb-1.5">
           <span className="flex items-center gap-1.5">
             <Badge tone="sky" className="text-[10px]">
               {q.type}
@@ -234,8 +234,8 @@ export function ListeningPlayer({ item, onComplete }: Props) {
         </Button>
       </div>
 
-      <Card className="p-5 bg-white">
-        <p className="text-[15px] text-slate-800 leading-relaxed whitespace-pre-wrap">
+      <Card className="p-5 bg-white dark:bg-slate-800/60">
+        <p className="text-[15px] text-slate-800 dark:text-slate-100 leading-relaxed whitespace-pre-wrap">
           {q.question_ko}
         </p>
       </Card>
@@ -252,11 +252,11 @@ export function ListeningPlayer({ item, onComplete }: Props) {
 
       {revealed && (
         <div className="animate-pop space-y-3">
-          <Card className="p-4 bg-sky-50/60 border-sky-200">
-            <div className="text-[10px] uppercase tracking-wider font-semibold text-sky-700 mb-1">
+          <Card className="p-4 bg-sky-50/60 dark:bg-sky-900/20 border-sky-200 dark:border-sky-700">
+            <div className="text-[10px] uppercase tracking-wider font-semibold text-sky-700 dark:text-sky-300 mb-1">
               해설
             </div>
-            <p className="text-sm text-slate-700 leading-relaxed">{q.explanation_ko}</p>
+            <p className="text-sm text-slate-700 dark:text-slate-200 leading-relaxed">{q.explanation_ko}</p>
           </Card>
           <Button onClick={onNext} className="w-full" size="lg">
             {qIdx + 1 >= item.questions.length ? '결과 보기' : '다음 문제'}
@@ -271,7 +271,7 @@ export function ListeningPlayer({ item, onComplete }: Props) {
 function SpeakerBadge({ speaker, compact }: { speaker: string | null; compact?: boolean }) {
   const cls = classifySpeaker(speaker)
   const emoji = cls === 'male' ? '🧑' : cls === 'female' ? '👩' : '🗣️'
-  const tone = cls === 'male' ? 'bg-sky-100 text-sky-700' : cls === 'female' ? 'bg-rose-100 text-rose-700' : 'bg-slate-100 text-slate-600'
+  const tone = cls === 'male' ? 'bg-sky-100 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300' : cls === 'female' ? 'bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300' : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
   const label = speaker ?? '—'
 
   if (compact) {
@@ -328,9 +328,9 @@ function QuizBody({
           placeholder="답을 영어로 입력"
           className={cn(
             'w-full h-12 rounded-2xl border px-4 text-base font-medium focus:outline-none focus:ring-2',
-            revealed && isCorrect && 'border-emerald-300 bg-emerald-50 text-emerald-700',
-            revealed && !isCorrect && 'border-rose-300 bg-rose-50 text-rose-700 animate-shake',
-            !revealed && 'border-slate-200 focus:ring-sky-300'
+            revealed && isCorrect && 'border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300',
+            revealed && !isCorrect && 'border-rose-300 dark:border-rose-700 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 animate-shake',
+            !revealed && 'border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-sky-300'
           )}
         />
         {!revealed && (
@@ -339,9 +339,9 @@ function QuizBody({
           </Button>
         )}
         {revealed && (
-          <Card className="p-3 bg-emerald-50/40 border-emerald-200">
-            <div className="text-xs text-slate-500">정답</div>
-            <div className="text-base font-bold text-emerald-700">{q.answer}</div>
+          <Card className="p-3 bg-emerald-50/40 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-700">
+            <div className="text-xs text-slate-500 dark:text-slate-400">정답</div>
+            <div className="text-base font-bold text-emerald-700 dark:text-emerald-300">{q.answer}</div>
           </Card>
         )}
       </div>
@@ -362,18 +362,18 @@ function QuizBody({
               className={cn(
                 'w-full text-left rounded-2xl border p-3.5 text-sm font-medium transition-all',
                 'flex items-start gap-3',
-                !revealed && 'bg-white border-slate-200 hover:bg-slate-50 active:scale-[0.99]',
-                revealed && isCorrect && 'bg-emerald-50 border-emerald-300 text-emerald-700',
-                revealed && isSelected && !isCorrect && 'bg-rose-50 border-rose-300 text-rose-700 animate-shake',
-                revealed && !isSelected && !isCorrect && 'bg-white border-slate-200 text-slate-400'
+                !revealed && 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700 active:scale-[0.99]',
+                revealed && isCorrect && 'bg-emerald-50 dark:bg-emerald-900/30 border-emerald-300 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300',
+                revealed && isSelected && !isCorrect && 'bg-rose-50 dark:bg-rose-900/30 border-rose-300 dark:border-rose-700 text-rose-700 dark:text-rose-300 animate-shake',
+                revealed && !isSelected && !isCorrect && 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500'
               )}
             >
               <span
                 className={cn(
                   'flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold flex-shrink-0',
-                  revealed && isCorrect && 'bg-emerald-200 text-emerald-700',
-                  revealed && isSelected && !isCorrect && 'bg-rose-200 text-rose-700',
-                  !revealed && 'bg-slate-100 text-slate-600'
+                  revealed && isCorrect && 'bg-emerald-200 dark:bg-emerald-800 text-emerald-700 dark:text-emerald-200',
+                  revealed && isSelected && !isCorrect && 'bg-rose-200 dark:bg-rose-800 text-rose-700 dark:text-rose-200',
+                  !revealed && 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
                 )}
               >
                 {revealed && isCorrect ? (
@@ -392,5 +392,5 @@ function QuizBody({
     )
   }
 
-  return <p className="text-sm text-slate-500">지원하지 않는 문제 유형이에요.</p>
+  return <p className="text-sm text-slate-500 dark:text-slate-400">지원하지 않는 문제 유형이에요.</p>
 }

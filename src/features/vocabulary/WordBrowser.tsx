@@ -15,7 +15,7 @@ export function WordBrowser({ items, week }: Props) {
   const [openId, setOpenId] = useState<string | null>(null)
 
   if (items.length === 0) {
-    return <p className="text-center text-slate-500 py-8">단어가 없어요.</p>
+    return <p className="text-center text-slate-500 dark:text-slate-400 py-8">단어가 없어요.</p>
   }
 
   return (
@@ -49,20 +49,20 @@ export function WordBrowser({ items, week }: Props) {
               </div>
               <DifficultyBadge level={it.difficulty} />
               {open ? (
-                <ChevronUp className="h-4 w-4 text-slate-400" />
+                <ChevronUp className="h-4 w-4 text-slate-400 dark:text-slate-500" />
               ) : (
-                <ChevronDown className="h-4 w-4 text-slate-400" />
+                <ChevronDown className="h-4 w-4 text-slate-400 dark:text-slate-500" />
               )}
             </button>
 
             {open && (
-              <div className="px-4 pb-4 pt-1 space-y-2.5 border-t border-slate-100 bg-slate-50/40">
+              <div className="px-4 pb-4 pt-1 space-y-2.5 border-t border-slate-100 dark:border-slate-700 bg-slate-50/40 dark:bg-slate-800/30">
                 <Field label="정의">
-                  <span className="text-sm text-slate-700">{it.definition_en}</span>
+                  <span className="text-sm text-slate-700 dark:text-slate-200">{it.definition_en}</span>
                 </Field>
                 <Field label="예문">
-                  <p className="text-sm text-slate-800">{it.example_en}</p>
-                  <p className="text-xs text-slate-500 mt-0.5">{it.example_ko}</p>
+                  <p className="text-sm text-slate-800 dark:text-slate-100">{it.example_en}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{it.example_ko}</p>
                 </Field>
                 {it.synonyms.length > 0 && (
                   <Field label="동의어">
@@ -89,7 +89,7 @@ export function WordBrowser({ items, week }: Props) {
                 {it.tags.length > 0 && (
                   <div className="flex flex-wrap gap-1.5 pt-1">
                     {it.tags.map((t) => (
-                      <span key={t} className="text-[10px] text-slate-500">
+                      <span key={t} className="text-[10px] text-slate-500 dark:text-slate-400">
                         #{t}
                       </span>
                     ))}
@@ -107,7 +107,7 @@ export function WordBrowser({ items, week }: Props) {
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 mb-0.5">
+      <div className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 dark:text-slate-500 mb-0.5">
         {label}
       </div>
       <div>{children}</div>
@@ -124,7 +124,7 @@ function DifficultyBadge({ level }: { level: number }) {
       {Array.from({ length: 5 }, (_, i) => (
         <span
           key={i}
-          className={cn('w-1 h-3 rounded-sm', i < level ? dotColor : 'bg-slate-200')}
+          className={cn('w-1 h-3 rounded-sm', i < level ? dotColor : 'bg-slate-200 dark:bg-slate-700')}
         />
       ))}
     </span>

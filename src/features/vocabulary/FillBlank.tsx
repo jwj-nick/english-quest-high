@@ -68,15 +68,15 @@ export function FillBlank({ items, questionCount = 6, onComplete }: Props) {
   }
 
   if (questions.length === 0) {
-    return <p className="text-center text-slate-500 py-8">단어 데이터가 없어요.</p>
+    return <p className="text-center text-slate-500 dark:text-slate-400 py-8">단어 데이터가 없어요.</p>
   }
 
   if (finished) {
     return (
-      <Card className="p-6 text-center bg-gradient-to-br from-violet-50 to-violet-100 border-violet-200 animate-pop">
-        <Sparkles className="h-6 w-6 text-violet-600 mx-auto mb-2" />
-        <p className="text-lg font-bold text-violet-800">완료!</p>
-        <p className="text-sm text-violet-700 mt-1">
+      <Card className="p-6 text-center bg-gradient-to-br from-violet-50 to-violet-100 dark:from-violet-900/30 dark:to-violet-900/10 border-violet-200 dark:border-violet-700 animate-pop">
+        <Sparkles className="h-6 w-6 text-violet-600 dark:text-violet-400 mx-auto mb-2" />
+        <p className="text-lg font-bold text-violet-800 dark:text-violet-200">완료!</p>
+        <p className="text-sm text-violet-700 dark:text-violet-300 mt-1">
           정답 {correct} / {questions.length} · 실수 {mistakes}
         </p>
       </Card>
@@ -86,7 +86,7 @@ export function FillBlank({ items, questionCount = 6, onComplete }: Props) {
   return (
     <div className="space-y-5">
       <div>
-        <div className="flex items-center justify-between text-sm text-slate-600 mb-1.5">
+        <div className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-300 mb-1.5">
           <span>빈칸 채우기 — 문장에 들어갈 알맞은 단어를 고르세요</span>
           <span className="tabular-nums">
             {idx + 1} / {questions.length}
@@ -95,12 +95,12 @@ export function FillBlank({ items, questionCount = 6, onComplete }: Props) {
         <ProgressBar value={idx + (revealed ? 1 : 0)} max={questions.length} color="violet" />
       </div>
 
-      <Card className="p-5 bg-gradient-to-br from-slate-50 to-white">
-        <p className="text-[15px] sm:text-base text-slate-800 leading-relaxed">
+      <Card className="p-5 bg-gradient-to-br from-slate-50 to-white dark:from-slate-800/60 dark:to-slate-800/40">
+        <p className="text-[15px] sm:text-base text-slate-800 dark:text-slate-100 leading-relaxed">
           {renderSentence(current.sentence)}
         </p>
         {revealed && (
-          <p className="mt-2 text-xs text-slate-500 leading-relaxed">{current.item.example_ko}</p>
+          <p className="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{current.item.example_ko}</p>
         )}
       </Card>
 
@@ -116,10 +116,10 @@ export function FillBlank({ items, questionCount = 6, onComplete }: Props) {
               className={cn(
                 'rounded-2xl border p-3 text-sm font-semibold transition-all',
                 'focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400',
-                !revealed && 'bg-white border-slate-200 hover:bg-slate-50 active:scale-[0.98]',
-                revealed && isCorrect && 'bg-emerald-50 border-emerald-300 text-emerald-700',
-                revealed && isSelected && !isCorrect && 'bg-rose-50 border-rose-300 text-rose-700 animate-shake',
-                revealed && !isSelected && !isCorrect && 'bg-white border-slate-200 text-slate-400'
+                !revealed && 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700 active:scale-[0.98]',
+                revealed && isCorrect && 'bg-emerald-50 dark:bg-emerald-900/30 border-emerald-300 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300',
+                revealed && isSelected && !isCorrect && 'bg-rose-50 dark:bg-rose-900/30 border-rose-300 dark:border-rose-700 text-rose-700 dark:text-rose-300 animate-shake',
+                revealed && !isSelected && !isCorrect && 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500'
               )}
             >
               <span className="inline-flex items-center gap-1.5">
@@ -134,13 +134,13 @@ export function FillBlank({ items, questionCount = 6, onComplete }: Props) {
 
       {revealed && (
         <div className="animate-pop space-y-3">
-          <Card className="p-4 bg-amber-50/60 border-amber-200">
-            <p className="text-sm text-slate-800">
-              <span className="font-bold text-amber-700">{current.item.word}</span>{' '}
-              <span className="text-xs text-slate-500">{current.item.ipa}</span>
-              <span className="ml-2 text-sm text-slate-700">{current.item.korean}</span>
+          <Card className="p-4 bg-amber-50/60 dark:bg-amber-900/20 border-amber-200 dark:border-amber-700">
+            <p className="text-sm text-slate-800 dark:text-slate-100">
+              <span className="font-bold text-amber-700 dark:text-amber-300">{current.item.word}</span>{' '}
+              <span className="text-xs text-slate-500 dark:text-slate-400">{current.item.ipa}</span>
+              <span className="ml-2 text-sm text-slate-700 dark:text-slate-200">{current.item.korean}</span>
             </p>
-            <p className="text-xs text-slate-600 mt-1">{current.item.definition_en}</p>
+            <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">{current.item.definition_en}</p>
           </Card>
           <Button onClick={onNext} className="w-full" size="lg">
             {idx + 1 >= questions.length ? '결과 보기' : '다음'}

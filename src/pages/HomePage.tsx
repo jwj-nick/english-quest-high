@@ -39,17 +39,17 @@ export function HomePage() {
   return (
     <div className="space-y-6">
       {/* Hero — Level + this week */}
-      <Card className="p-5 bg-gradient-to-br from-violet-50 via-white to-amber-50 border-violet-200/60">
+      <Card className="p-5 bg-gradient-to-br from-violet-50 via-white to-amber-50 dark:from-violet-900/25 dark:via-slate-800/40 dark:to-amber-900/20 border-violet-200/60 dark:border-violet-800/60">
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">
-            <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">
+            <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
               안녕, {profile.name}!
             </p>
-            <h1 className="text-xl font-bold text-slate-900 mt-0.5">
+            <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 mt-0.5">
               {todayXp > 0 ? `오늘 +${todayXp} XP` : '오늘 첫 던전, 가볼까?'}
             </h1>
             {weekMeta && (
-              <p className="text-xs text-slate-600 mt-1 flex items-center gap-1">
+              <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 flex items-center gap-1">
                 <Calendar className="h-3 w-3" />
                 {week} · {weekMeta.theme}
               </p>
@@ -66,10 +66,10 @@ export function HomePage() {
 
         <div className="mt-4">
           <div className="flex items-center justify-between text-xs mb-1">
-            <span className="font-semibold text-slate-700">
+            <span className="font-semibold text-slate-700 dark:text-slate-200">
               Lv.{lv.level} · {levelTitle(lv.level)}
             </span>
-            <span className="text-slate-500 tabular-nums">
+            <span className="text-slate-500 dark:text-slate-400 tabular-nums">
               {lv.intoLevel} / {lv.needForNext} XP
             </span>
           </div>
@@ -81,23 +81,23 @@ export function HomePage() {
       <DailyMissions />
 
       {/* Status messages */}
-      {loading && <p className="text-center text-sm text-slate-500 py-4">이번 주 던전 불러오는 중...</p>}
+      {loading && <p className="text-center text-sm text-slate-500 dark:text-slate-400 py-4">이번 주 던전 불러오는 중...</p>}
       {error && (
-        <Card className="p-4 border-rose-200 bg-rose-50">
-          <p className="text-sm text-rose-700">콘텐츠를 불러오지 못했어요: {error}</p>
+        <Card className="p-4 border-rose-200 dark:border-rose-700 bg-rose-50 dark:bg-rose-900/20">
+          <p className="text-sm text-rose-700 dark:text-rose-300">콘텐츠를 불러오지 못했어요: {error}</p>
         </Card>
       )}
 
       {/* Dungeon cards */}
       <section>
         <div className="flex items-center justify-between mb-3">
-          <h2 className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
+          <h2 className="text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
             <Trophy className="h-4 w-4 text-amber-500" />
             오늘의 던전
           </h2>
           <Link
             to="/progress"
-            className="text-xs text-slate-500 hover:text-slate-900 flex items-center gap-0.5"
+            className="text-xs text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 flex items-center gap-0.5"
           >
             전체 기록
             <ArrowRight className="h-3 w-3" />
@@ -126,9 +126,9 @@ export function HomePage() {
       </section>
 
       {/* Encouragement */}
-      <Card className="p-4 bg-slate-50 border-slate-200">
-        <p className="text-xs text-slate-600 leading-relaxed">
-          💡 <span className="font-semibold text-slate-700">팁:</span> 잘 모르는 단어는 "단어 둘러보기"에서 먼저 한 번 보고, "짝 맞추기"로 가볍게 시작해봐요.
+      <Card className="p-4 bg-slate-50 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700">
+        <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+          💡 <span className="font-semibold text-slate-700 dark:text-slate-200">팁:</span> 잘 모르는 단어는 "단어 둘러보기"에서 먼저 한 번 보고, "짝 맞추기"로 가볍게 시작해봐요.
         </p>
       </Card>
     </div>
